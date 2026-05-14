@@ -47,21 +47,25 @@ export function Gallery() {
             'radial-gradient(ellipse at center, rgba(212,165,116,0.10) 0%, transparent 60%)',
         }}
       />
-      <header className="mb-14 text-center relative">
-        <span className="eyebrow">{gallery.eyebrow}</span>
-        <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.95] text-bone mt-3">
-          {gallery.title.line1}
-          <br />
-          <span
-            className="bg-clip-text text-transparent"
-            style={{
-              backgroundImage:
-                'linear-gradient(90deg, #E07B4A 0%, #D4A574 100%)',
-            }}
-          >
-            {gallery.title.line2Red}
+      <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-14 max-w-[1400px] mx-auto relative">
+        <div className="section-num">06</div>
+        <div>
+          <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/80 font-bold block mb-2">
+            {gallery.eyebrow}
           </span>
-        </h2>
+          <div className="thin-rule max-w-[260px]" aria-hidden />
+          <h2 className="mt-4">
+            <span className="block font-display text-[clamp(2.4rem,5.2vw,5.2rem)] leading-[0.92] text-bone">
+              Real projects.
+            </span>
+            <span className="block font-serif italic text-[clamp(2.4rem,5.4vw,5.4rem)] leading-[0.92] -mt-1 text-sun">
+              real results.
+            </span>
+          </h2>
+        </div>
+        <span className="hidden md:inline-block font-serif italic text-sun/70 text-[1.05rem]">
+          A selection.
+        </span>
       </header>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-w-[1400px] mx-auto relative">

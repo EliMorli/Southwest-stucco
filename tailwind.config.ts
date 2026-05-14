@@ -39,6 +39,7 @@ const config: Config = {
         display: ['var(--font-bebas)', 'sans-serif'],
         body: ['var(--font-nunito)', 'sans-serif'],
         condensed: ['var(--font-barlow)', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'desert-dusk':
@@ -57,6 +58,9 @@ const config: Config = {
         'tick': 'tick 22s linear infinite',
         'blink': 'blink 2s ease-in-out infinite',
         'sun-pulse': 'sunpulse 6s ease-in-out infinite',
+        'rise-in': 'risein 1.1s cubic-bezier(0.16, 1, 0.3, 1) both',
+        'fade-in': 'fadein 1.4s ease-out both',
+        'kenburns': 'kenburns 18s ease-in-out infinite alternate',
       },
       keyframes: {
         halop: {
@@ -74,6 +78,18 @@ const config: Config = {
         sunpulse: {
           '0%,100%': { opacity: '0.85', transform: 'scale(1)' },
           '50%': { opacity: '1', transform: 'scale(1.04)' },
+        },
+        risein: {
+          '0%': { opacity: '0', transform: 'translateY(28px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadein: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        kenburns: {
+          '0%': { transform: 'scale(1.05) translate(0, 0)' },
+          '100%': { transform: 'scale(1.15) translate(-1.5%, -1.5%)' },
         },
       },
     },

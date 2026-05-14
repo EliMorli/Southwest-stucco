@@ -20,46 +20,55 @@ export function Testimonials({
         aria-hidden
         className="absolute -top-[15%] right-[5%] w-[460px] h-[460px] rounded-full pointer-events-none sun-disc opacity-50"
       />
-      <div className="max-w-[1200px] mx-auto relative">
+      <div className="max-w-[1300px] mx-auto relative">
         {isHome && (
-          <header className="text-center mb-14">
-            <span className="eyebrow">Word of Mouth</span>
-            <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.95] text-bone mt-3">
-              What Neighbors{' '}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(90deg, #E07B4A 0%, #D4A574 100%)',
-                }}
-              >
-                Are Saying.
+          <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-14">
+            <div className="section-num">05</div>
+            <div>
+              <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/80 font-bold block mb-2">
+                Word of Mouth
               </span>
-            </h2>
-            <div className="flex items-center justify-center gap-3 mt-5 text-bone/75">
-              <span className="text-clay text-xl tracking-widest" aria-hidden>
+              <div className="thin-rule max-w-[260px]" aria-hidden />
+              <h2 className="mt-4">
+                <span className="block font-display text-[clamp(2.4rem,5vw,5rem)] leading-[0.92] text-bone">
+                  What neighbors
+                </span>
+                <span className="block font-serif italic text-[clamp(2.4rem,5.2vw,5.2rem)] leading-[0.92] -mt-1 text-sun">
+                  are saying.
+                </span>
+              </h2>
+            </div>
+            <div className="text-right text-bone/75 hidden md:block">
+              <div className="text-clay text-xl tracking-widest" aria-hidden>
                 ★★★★★
-              </span>
-              <span className="text-sm font-bold tracking-wide">
-                {aggregate.ratingValue.toFixed(1)} / 5 · {aggregate.reviewCount} reviews
-              </span>
+              </div>
+              <div className="font-serif italic text-[1.6rem] text-bone mt-1">
+                {aggregate.ratingValue.toFixed(1)} / 5
+              </div>
+              <div className="font-condensed text-[0.65rem] tracking-[0.32em] uppercase text-sun/70 font-bold">
+                {aggregate.reviewCount} reviews
+              </div>
             </div>
           </header>
         )}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-sun/10 rounded-sm overflow-hidden">
           {items.map((t) => (
             <article
               key={t.name + t.date}
-              className="bg-mesa-100/60 border border-sun/12 rounded-2xl p-7 backdrop-blur-sm flex flex-col"
+              className="bg-mesa-100/80 p-8 backdrop-blur-sm flex flex-col"
             >
-              <span className="text-clay text-base tracking-widest mb-3" aria-hidden>
+              <span className="text-clay text-base tracking-widest mb-4" aria-hidden>
                 {'★'.repeat(t.rating)}
               </span>
-              <p className="text-bone/80 leading-[1.7] text-[0.94rem] flex-1">{t.body}</p>
-              <footer className="mt-5 pt-4 border-t border-sun/10">
-                <div className="font-bold text-bone text-sm">{t.name}</div>
-                <div className="text-[0.8rem] text-sun/70">{t.city} · {t.service}</div>
+              <p className="font-serif italic text-bone/90 leading-[1.55] text-[1.15rem] flex-1">
+                &ldquo;{t.body}&rdquo;
+              </p>
+              <footer className="mt-6 pt-5 border-t border-sun/15">
+                <div className="font-bold text-bone text-sm tracking-wide">{t.name}</div>
+                <div className="font-condensed text-[0.7rem] text-sun/75 tracking-[0.22em] uppercase font-bold mt-0.5">
+                  {t.city} · {t.service}
+                </div>
               </footer>
             </article>
           ))}
