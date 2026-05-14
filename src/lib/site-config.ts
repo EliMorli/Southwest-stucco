@@ -1,0 +1,62 @@
+export const siteConfig = {
+  name: 'Southwest Stucco Inc.',
+  shortName: 'Southwest Stucco',
+  legalName: 'Southwest Stucco, Inc.',
+  tagline: 'Family Owned & Operated Since 1995',
+  description:
+    'Family-owned stucco and plastering contractor in Calabasas, CA serving Los Angeles homeowners and builders since 1995. Commercial & residential stucco, scaffold, smooth/sand/acrylic finishes, repair. CSLB License #702110. Free estimates.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://southweststucco.net',
+  phone: '(818) 888-8554',
+  phoneE164: '+18188888554',
+  email: 'Southweststucco@gmail.com',
+  foundedYear: 1995,
+  cslb: '702110',
+  address: {
+    streetAddress: '26500 Agoura Rd #420',
+    locality: 'Calabasas',
+    region: 'CA',
+    postalCode: '91302',
+    country: 'US',
+  },
+  // Calabasas, CA — 26500 Agoura Rd
+  geo: {
+    latitude: 34.1486,
+    longitude: -118.7245,
+  },
+  serviceAreas: [
+    'Calabasas',
+    'Hidden Hills',
+    'Agoura Hills',
+    'Westlake Village',
+    'Woodland Hills',
+    'Tarzana',
+    'Encino',
+    'Sherman Oaks',
+    'Studio City',
+    'Bel Air',
+    'Beverly Hills',
+    'Malibu',
+    'Pacific Palisades',
+    'Brentwood',
+    'San Fernando Valley',
+    'Los Angeles',
+  ],
+  services: [
+    'Commercial Stucco',
+    'Residential Stucco',
+    'Residential Plastering',
+    'Scaffold Installation',
+    'Smooth Finish',
+    'Sand Finish',
+    'Acrylic Finish',
+    'Stucco Repair',
+    'Patching',
+    'Custom Finishes',
+  ],
+  social: {
+    instagram: 'https://www.instagram.com/southwest_stucco_inc/',
+    facebook: 'https://www.facebook.com/southweststuccoincorporated/',
+  },
+} as const;
+
+export type SiteConfig = typeof siteConfig;
