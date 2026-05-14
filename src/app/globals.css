@@ -3,90 +3,109 @@
 @tailwind utilities;
 
 :root {
-  --red: #CC1B1B;
-  --red-bright: #e02020;
-  --red-dark: #8B0000;
-  --ink: #0d0d0d;
-  --ink-50: #141414;
-  --ink-100: #1a1a1a;
-  --ink-200: #222;
-  --warm: #FDF6EE;
-  --warmgray: #c8b8a8;
-  --gold: #FFD700;
-  --text: #2a2a2a;
+  /* Southwest desert palette */
+  --terracotta: #C2562B;
+  --clay: #E07B4A;
+  --adobe: #8C3A1E;
+  --sun: #D4A574;
+  --sand: #F1E4CF;
+  --bone: #FAF3E7;
+  --sage: #889078;
+  --mesa: #1F1611;
+  --mesa-50: #2A1F18;
+  --mesa-100: #382920;
+  --mesa-200: #4A372B;
+  --warmgray: #C4A88A;
+  --text: #3B2A1F;
+
+  /* Legacy aliases (kept so existing utility classes still resolve) */
+  --red: var(--terracotta);
+  --red-bright: var(--clay);
+  --red-dark: var(--adobe);
+  --ink: var(--mesa);
+  --ink-50: var(--mesa-50);
+  --ink-100: var(--mesa-100);
+  --warm: var(--bone);
+  --gold: var(--sun);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--ink);
+  background: var(--mesa);
   color: #fff;
   font-family: var(--font-nunito), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
-/* Subtle warm grain overlay (matches original) */
+/* Sandy warm grain — slightly more visible than before */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: overlay;
 }
 
-/* Reusable utility classes for the design system */
+/* Buttons */
 .btn-red {
-  background: var(--red);
+  background: linear-gradient(180deg, var(--clay) 0%, var(--terracotta) 100%);
   color: #fff;
   padding: 0.95rem 2.2rem;
   border-radius: 30px;
   font-weight: 800;
   font-size: 0.95rem;
+  letter-spacing: 0.03em;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(204, 27, 27, 0.35);
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 6px 22px rgba(194, 86, 43, 0.4), inset 0 1px 0 rgba(255,255,255,0.18);
 }
 .btn-red:hover {
-  background: var(--red-dark);
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--adobe) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(204, 27, 27, 0.45);
+  box-shadow: 0 10px 30px rgba(140, 58, 30, 0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+  filter: saturate(1.05);
 }
 
 .btn-outline {
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+  border: 2px solid rgba(212, 165, 116, 0.45);
+  color: var(--sun);
   padding: 0.95rem 2rem;
   border-radius: 30px;
   font-weight: 700;
   font-size: 0.92rem;
+  letter-spacing: 0.04em;
   text-decoration: none;
   display: inline-block;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .btn-outline:hover {
-  border-color: var(--red);
-  color: var(--red);
+  border-color: var(--clay);
+  color: var(--clay);
+  background: rgba(224, 123, 74, 0.06);
 }
 
+/* Eyebrow label */
 .eyebrow {
   font-family: var(--font-barlow), sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--terracotta);
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
 }
 .eyebrow::before {
   content: '';
-  width: 24px;
+  width: 28px;
   height: 2px;
-  background: var(--red);
+  background: linear-gradient(90deg, var(--terracotta), var(--sun));
   display: block;
 }
 
@@ -96,7 +115,47 @@ body::after {
   line-height: 0.95;
   letter-spacing: 0.02em;
 }
-.section-title .red { color: var(--red); }
+.section-title .red { color: var(--terracotta); }
+
+/* Reusable desert decorations */
+.adobe-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF3E7 100%);
+  border: 1px solid rgba(140, 58, 30, 0.12);
+  border-bottom: 4px solid var(--terracotta);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 12px 32px -16px rgba(63, 38, 22, 0.25);
+}
+
+.sand-divider {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(194,86,43,0.18) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bone) 0%, var(--sand) 100%);
+}
+
+/* Sun motif — a soft glowing disc behind hero/quote sections */
+.sun-disc {
+  background: radial-gradient(
+    circle,
+    rgba(245, 200, 140, 0.85) 0%,
+    rgba(224, 123, 74, 0.55) 30%,
+    rgba(140, 58, 30, 0.15) 60%,
+    transparent 75%
+  );
+  filter: blur(2px);
+}
+
+/* Adobe brick stripe — decorative bottom band for warm sections */
+.adobe-stripe {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--terracotta) 0 22px,
+    var(--adobe) 22px 44px,
+    var(--terracotta) 44px 66px,
+    var(--clay) 66px 88px
+  );
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
