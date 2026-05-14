@@ -2,6 +2,11 @@ import type { Metadata, Viewport } from 'next';
 import { Bebas_Neue, Nunito, Barlow_Condensed } from 'next/font/google';
 import { siteConfig } from '@/lib/site-config';
 import { JsonLd } from '@/components/JsonLd';
+import { Nav } from '@/components/Nav';
+import { Footer } from '@/components/Footer';
+import { StickyCallButton } from '@/components/StickyCallButton';
+import { CookieConsent } from '@/components/CookieConsent';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import './globals.css';
 
 const bebas = Bebas_Neue({
@@ -106,12 +111,26 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || '';
   return (
     <html lang="en" className={`${bebas.variable} ${nunito.variable} ${barlow.variable}`}>
       <head>
         <JsonLd />
       </head>
-      <body>{children}</body>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[1000] focus:bg-bone focus:text-adobe focus:px-4 focus:py-2 focus:rounded"
+        >
+          Skip to main content
+        </a>
+        <Nav />
+        <main id="main">{children}</main>
+        <Footer />
+        <StickyCallButton />
+        <CookieConsent />
+        {gaId && <GoogleAnalytics id={gaId} />}
+      </body>
     </html>
   );
 }
