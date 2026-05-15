@@ -61,4 +61,18 @@ export const generalFaqs: FAQ[] = [
     q: 'How do I get an estimate?',
     a: 'Call us at (818) 888-8554, email Southweststucco@gmail.com, or use the contact form on this site. We will set up a free site visit within a day or two and get you a written estimate shortly after.',
   },
+
+  // For general contractors / B2B audience
+  {
+    q: 'Do you work with general contractors on commercial projects?',
+    a: 'Yes — most of our pipeline is commercial subcontracting for general contractors across Los Angeles. We run up to 4 concurrent crews, own our scaffold, are DIR-registered, bonded up to $3M single-project, and self-perform lath, scratch, brown, and finish. See our For General Contractors page for capability details.',
+  },
+  {
+    q: 'Are you DIR-registered for prevailing wage / public works?',
+    a: 'Yes. We are registered with the California Department of Industrial Relations, handle certified payroll in-house weekly through the eCPR system, honor apprenticeship ratios, and are capable on skilled-and-trained-workforce projects when required.',
+  },
+  {
+    q: 'What is your bonding capacity?',
+    a: 'Single-project bonding capacity up to $3M with aggregate capacity over $10M. We can provide a current letter from our bonding agent at bid day.',
+  },
 ];

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { contact } from '@/lib/content';
+import { track } from '@/lib/analytics';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -41,6 +42,10 @@ export function Contact() {
         return;
       }
       setStatus('success');
+      track('form_submit', {
+        label: 'contact_form',
+        service: typeof payload.service === 'string' ? payload.service : '',
+      });
       form.reset();
     } catch {
       setErrorMsg('Network error. Please call us instead.');

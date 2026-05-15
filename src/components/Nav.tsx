@@ -11,6 +11,7 @@ const primaryLinks: { href: string; label: string; mega?: 'services' | 'areas' }
   { href: '/services', label: 'Services', mega: 'services' },
   { href: '/service-areas', label: 'Service Areas', mega: 'areas' },
   { href: '/projects', label: 'Projects' },
+  { href: '/general-contractors', label: 'For GCs' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },

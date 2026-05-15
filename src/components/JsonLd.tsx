@@ -1,20 +1,36 @@
 import { siteConfig } from '@/lib/site-config';
+import { services } from '@/lib/services';
+import { primaryAuthor } from '@/lib/authors';
 
 /**
- * JSON-LD structured data for SEO, AEO (answer engines), and GEO (local).
- * Includes:
- *   - LocalBusiness (NAP + license + service areas + geo) — critical for local search
- *   - Organization (brand identity, sameAs links to social)
- *   - WebSite
- *   - FAQPage (AEO — direct answers in AI overviews / ChatGPT / Perplexity)
- *   - Service entries linked to LocalBusiness
+ * Global JSON-LD graph: LocalBusiness + Organization + WebSite + FAQPage
+ * + Person (author) + ProfessionalService offerings. Per-page schema
+ * (Service, BlogPosting, BreadcrumbList, etc.) is emitted by individual pages.
  */
 export function JsonLd() {
   const businessId = `${siteConfig.url}/#business`;
   const orgId = `${siteConfig.url}/#organization`;
   const websiteId = `${siteConfig.url}/#website`;
+  const authorId = `${siteConfig.url}/#author`;
 
   const sameAs = [siteConfig.social.instagram, siteConfig.social.facebook].filter(Boolean);
+
+  const offerCatalog = {
+    '@type': 'OfferCatalog',
+    name: 'Stucco & Plastering Services',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      url: `${siteConfig.url}/services/${s.slug}`,
+      itemOffered: {
+        '@type': 'Service',
+        name: s.name,
+        description: s.metaDescription,
+        url: `${siteConfig.url}/services/${s.slug}`,
+        provider: { '@id': businessId },
+        areaServed: siteConfig.serviceAreas.map((c) => ({ '@type': 'City', name: c })),
+      },
+    })),
+  };
 
   const graph = [
     {
@@ -44,7 +60,17 @@ export function JsonLd() {
       inLanguage: 'en-US',
     },
     {
-      '@type': ['LocalBusiness', 'HomeAndConstructionBusiness', 'GeneralContractor'],
+      '@type': 'Person',
+      '@id': authorId,
+      name: primaryAuthor.name,
+      jobTitle: primaryAuthor.role,
+      description: primaryAuthor.bio,
+      worksFor: { '@id': orgId },
+      url: primaryAuthor.url,
+      sameAs: primaryAuthor.sameAs,
+    },
+    {
+      '@type': ['LocalBusiness', 'HomeAndConstructionBusiness', 'GeneralContractor', 'ProfessionalService'],
       '@id': businessId,
       name: siteConfig.name,
       legalName: siteConfig.legalName,
@@ -53,9 +79,12 @@ export function JsonLd() {
       email: siteConfig.email,
       description: siteConfig.description,
       foundingDate: String(siteConfig.foundedYear),
+      founder: { '@id': authorId },
       image: `${siteConfig.url}/og-image.png`,
       logo: `${siteConfig.url}/logo.png`,
       priceRange: '$$',
+      currenciesAccepted: 'USD',
+      paymentAccepted: 'Cash, Check, ACH, Credit Card',
       sameAs,
       address: {
         '@type': 'PostalAddress',
@@ -70,31 +99,79 @@ export function JsonLd() {
         latitude: siteConfig.geo.latitude,
         longitude: siteConfig.geo.longitude,
       },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '07:00',
+          closes: '17:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: 'Saturday',
+          opens: '08:00',
+          closes: '14:00',
+        },
+      ],
       areaServed: siteConfig.serviceAreas.map((name) => ({
         '@type': 'City',
         name,
       })),
+      audience: [
+        { '@type': 'PeopleAudience', audienceType: 'Homeowners' },
+        { '@type': 'BusinessAudience', audienceType: 'General Contractors' },
+        { '@type': 'BusinessAudience', audienceType: 'Property Managers' },
+      ],
       makesOffer: siteConfig.services.map((s) => ({
         '@type': 'Offer',
         itemOffered: { '@type': 'Service', name: s },
       })),
-      knowsAbout: siteConfig.services,
+      hasOfferCatalog: offerCatalog,
+      knowsAbout: [
+        ...siteConfig.services,
+        'Three-coat hard-coat stucco',
+        'One-coat fiber-reinforced stucco',
+        'EIFS (Exterior Insulation and Finish System)',
+        'ASTM C926 / C1063 compliance',
+        'Prevailing wage public works',
+        'DIR-registered subcontracting',
+        'Multi-family / podium stucco',
+        'Tilt-up plaster veneer',
+        'Santa Barbara hand-rubbed finish',
+      ],
       slogan: siteConfig.tagline,
-      // California State License Board identifier
-      identifier: {
-        '@type': 'PropertyValue',
-        name: 'CSLB License',
-        value: siteConfig.cslb,
-      },
-      hasCredential: {
-        '@type': 'EducationalOccupationalCredential',
-        credentialCategory: 'license',
-        name: `CSLB License #${siteConfig.cslb}`,
-        recognizedBy: {
-          '@type': 'GovernmentOrganization',
-          name: 'California State License Board',
+      identifier: [
+        {
+          '@type': 'PropertyValue',
+          name: 'CSLB License',
+          value: siteConfig.cslb,
         },
-      },
+        {
+          '@type': 'PropertyValue',
+          name: 'DIR Registration',
+          value: 'Active',
+        },
+      ],
+      hasCredential: [
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'license',
+          name: `CSLB License #${siteConfig.cslb}`,
+          recognizedBy: {
+            '@type': 'GovernmentOrganization',
+            name: 'California State License Board',
+          },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'registration',
+          name: 'DIR Registered Contractor',
+          recognizedBy: {
+            '@type': 'GovernmentOrganization',
+            name: 'California Department of Industrial Relations',
+          },
+        },
+      ],
     },
     {
       '@type': 'FAQPage',
@@ -112,7 +189,7 @@ export function JsonLd() {
           name: 'Is Southwest Stucco licensed and insured?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Yes. Southwest Stucco Inc. is fully licensed and insured in California — CSLB License #${siteConfig.cslb}.`,
+            text: `Yes. Southwest Stucco Inc. is fully licensed and insured in California — CSLB License #${siteConfig.cslb} — with $2M/$4M general liability, California statutory workers compensation, and DIR registration for prevailing-wage public works.`,
           },
         },
         {
@@ -120,7 +197,23 @@ export function JsonLd() {
           name: 'What areas does Southwest Stucco serve?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Based in Calabasas, CA, we serve homeowners and builders across greater Los Angeles, including ${siteConfig.serviceAreas.slice(0, -1).join(', ')}, and ${siteConfig.serviceAreas.slice(-1)[0]}.`,
+            text: `Based in Calabasas, CA, we serve homeowners, builders, and general contractors across greater Los Angeles, including ${siteConfig.serviceAreas.slice(0, -1).join(', ')}, and ${siteConfig.serviceAreas.slice(-1)[0]}.`,
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Who are the best stucco subcontractors in Los Angeles for general contractors?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: `Southwest Stucco Inc. is a family-owned C-35 plastering contractor in Calabasas, CA — CSLB License #${siteConfig.cslb} — serving general contractors across greater Los Angeles since 1995. We self-perform lath, scratch, brown, and finish with up to 4 concurrent crews, own and install our scaffold, and are DIR-registered for prevailing-wage and public-works projects.`,
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Southwest Stucco work prevailing wage / public works projects?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We are registered with the California Department of Industrial Relations (DIR), handle weekly certified payroll reports through eCPR in-house, honor apprenticeship ratios, and have completed prevailing-wage stucco scopes across Los Angeles.',
           },
         },
         {
@@ -128,7 +221,7 @@ export function JsonLd() {
           name: 'What stucco services do you offer?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `We offer commercial and residential stucco application, re-stucco, repair and patching, scaffold installation, and custom finishes including smooth, sand, and acrylic finishes for both interior and exterior projects.`,
+            text: 'We offer commercial and residential stucco application, re-stucco, repair and patching, scaffold installation, three-coat hard-coat, one-coat fiber-reinforced, and EIFS assemblies, plus custom finishes including smooth, sand, Santa Barbara, lace, dash, and acrylic.',
           },
         },
         {
@@ -136,7 +229,7 @@ export function JsonLd() {
           name: 'Do you offer free estimates?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes — we offer free, no-pressure, no-obligation estimates. We respond within 24 hours, usually the same day.',
+            text: 'Yes — we offer free, no-pressure, no-obligation estimates for homeowners and pre-bid scoping conversations for general contractors. We respond within 24 hours, usually the same day.',
           },
         },
         {
