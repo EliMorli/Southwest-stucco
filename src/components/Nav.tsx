@@ -30,7 +30,7 @@ export function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed top-0 inset-x-0 z-[600] bg-mesa/90 backdrop-blur-xl border-b border-terracotta/60 shadow-[0_2px_0_0_rgba(212,165,116,0.18)]"
+      className="fixed top-0 inset-x-0 z-[600] bg-mesa/95 backdrop-blur-xl border-b border-terracotta/60 shadow-[0_2px_0_0_rgba(212,165,116,0.18)]"
       onMouseLeave={() => setOpenMega(null)}
     >
       <div className="flex items-center justify-between px-[5vw] py-3">
@@ -94,23 +94,23 @@ export function Nav() {
       {/* Desktop mega menu */}
       {openMega && (
         <div
-          className="hidden lg:block absolute inset-x-0 top-full bg-mesa-100/98 backdrop-blur-xl border-t border-sun/15 shadow-[0_18px_36px_-12px_rgba(0,0,0,0.55)]"
+          className="hidden lg:block absolute inset-x-0 top-full bg-mesa-100 border-t border-sun/25 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]"
           onMouseEnter={() => setOpenMega(openMega)}
           onMouseLeave={() => setOpenMega(null)}
         >
           <div className="max-w-[1200px] mx-auto px-[5vw] py-8">
             {openMega === 'services' && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {services.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/services/${s.slug}`}
-                    className="group flex gap-3 items-start no-underline p-3 rounded-lg hover:bg-terracotta/[0.08] transition-colors"
+                    className="group flex gap-3 items-start no-underline p-3 rounded-md hover:bg-terracotta/15 transition-colors"
                   >
                     <span className="text-[1.6rem]" aria-hidden>{s.icon}</span>
                     <div>
                       <div className="font-bold text-bone group-hover:text-clay">{s.name}</div>
-                      <div className="text-[0.82rem] text-bone/60 leading-snug mt-0.5">{s.short}</div>
+                      <div className="text-[0.82rem] text-bone/70 leading-snug mt-0.5">{s.short}</div>
                     </div>
                   </Link>
                 ))}
@@ -118,12 +118,12 @@ export function Nav() {
             )}
             {openMega === 'areas' && (
               <div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1.5">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1">
                   {serviceAreas.map((a) => (
                     <Link
                       key={a.slug}
                       href={`/service-areas/${a.slug}`}
-                      className="text-[0.92rem] text-bone/75 hover:text-clay no-underline py-1"
+                      className="text-[0.95rem] font-semibold text-bone/85 hover:text-clay no-underline py-1.5 px-2 rounded-md hover:bg-terracotta/10 transition-colors"
                     >
                       {a.city}
                     </Link>
@@ -143,7 +143,7 @@ export function Nav() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-sun/15 bg-mesa-100/98 backdrop-blur-xl max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden border-t border-sun/25 bg-mesa-100 max-h-[80vh] overflow-y-auto shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]">
           <ul className="flex flex-col list-none m-0 p-4 gap-1">
             {primaryLinks.map((l) => (
               <li key={l.href}>
