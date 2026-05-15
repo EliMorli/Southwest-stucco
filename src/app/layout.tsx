@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Bebas_Neue, Nunito, Barlow_Condensed } from 'next/font/google';
+import { Bebas_Neue, Nunito, Barlow_Condensed, Cormorant_Garamond } from 'next/font/google';
 import { siteConfig } from '@/lib/site-config';
 import { JsonLd } from '@/components/JsonLd';
 import { Nav } from '@/components/Nav';
@@ -27,6 +27,14 @@ const barlow = Barlow_Condensed({
   weight: ['400', '700', '900'],
   subsets: ['latin'],
   variable: '--font-barlow',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  weight: ['300', '400', '500', '600'],
+  style: ['italic', 'normal'],
+  subsets: ['latin'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
@@ -113,7 +121,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID || '';
   return (
-    <html lang="en" className={`${bebas.variable} ${nunito.variable} ${barlow.variable}`}>
+    <html lang="en" className={`${bebas.variable} ${nunito.variable} ${barlow.variable} ${cormorant.variable}`}>
       <head>
         <JsonLd />
       </head>

@@ -3,48 +3,62 @@ import { serviceAreas } from '@/lib/areas';
 
 export function AreaTeaser() {
   return (
-    <section className="bg-sand-fade py-24 px-[5vw] relative overflow-hidden">
-      <div aria-hidden className="adobe-stripe h-[5px] absolute top-0 inset-x-0 opacity-90" />
-      <div className="max-w-[1200px] mx-auto relative">
-        <header className="text-center mb-12">
-          <span className="eyebrow">Where We Work</span>
-          <h2 className="font-display text-[clamp(2.2rem,4vw,3.6rem)] leading-[0.95] text-mesa mt-3">
-            Calabasas Born.{' '}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  'linear-gradient(90deg, #8C3A1E 0%, #C2562B 60%, #E07B4A 100%)',
-              }}
-            >
-              All of LA Served.
+    <section className="plaster-bg py-32 px-[5vw] relative overflow-hidden">
+      <div aria-hidden className="adobe-stripe h-[5px] absolute top-0 inset-x-0 opacity-95" />
+      <div className="max-w-[1300px] mx-auto relative">
+        <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-14">
+          <div className="section-num text-adobe">04</div>
+          <div>
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-terracotta font-bold block mb-2">
+              Where We Work
             </span>
-          </h2>
-          <p className="text-mesa/65 mt-4 max-w-[620px] mx-auto leading-[1.7]">
-            Headquartered in Calabasas, we crew up daily for projects across the West Valley,
-            Conejo Valley, Westside, and the broader Los Angeles basin.
-          </p>
+            <div className="thin-rule-dark max-w-[260px]" aria-hidden />
+          </div>
+          <Link
+            href="/service-areas"
+            className="hidden md:inline-block font-serif italic text-adobe text-[1.1rem] hover:text-terracotta no-underline border-b border-adobe/40 hover:border-terracotta pb-0.5"
+          >
+            All areas →
+          </Link>
         </header>
 
-        <ul className="list-none m-0 p-0 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <h2 className="mb-14 max-w-[1100px]">
+          <span className="block font-display text-[clamp(2.4rem,5.5vw,5.5rem)] leading-[0.92] tracking-[0.005em] text-mesa">
+            Calabasas born.
+          </span>
+          <span
+            className="block font-serif italic text-[clamp(2.4rem,5.7vw,5.7rem)] leading-[0.92] tracking-[-0.01em] -mt-1 bg-clip-text text-transparent"
+            style={{
+              backgroundImage:
+                'linear-gradient(90deg, #8C3A1E 0%, #C2562B 60%, #E07B4A 100%)',
+            }}
+          >
+            All of LA served.
+          </span>
+        </h2>
+
+        <p className="font-serif italic text-mesa/75 text-[1.2rem] leading-[1.5] max-w-[620px] mb-12">
+          Headquartered on Agoura Rd, our crews work daily across the West Valley,
+          Conejo Valley, Westside, and the broader Los Angeles basin.
+        </p>
+
+        <ul className="list-none m-0 p-0 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-[1px] bg-adobe/15 rounded-sm overflow-hidden">
           {serviceAreas.map((a) => (
             <li key={a.slug}>
               <Link
                 href={`/service-areas/${a.slug}`}
-                className="block bg-bone border border-terracotta/15 rounded-xl px-4 py-3 text-mesa font-bold no-underline hover:border-terracotta hover:text-terracotta transition-colors shadow-[0_2px_0_rgba(140,58,30,0.05)]"
+                className="block bg-bone px-5 py-4 text-mesa no-underline hover:bg-terracotta/[0.06] transition-colors h-full group"
               >
-                <span className="block text-sm">{a.city}</span>
-                <span className="block text-[0.72rem] font-semibold text-mesa/55 mt-0.5">
+                <span className="block font-display text-[1.4rem] tracking-wide text-mesa group-hover:text-terracotta transition-colors leading-tight">
+                  {a.city}
+                </span>
+                <span className="block font-condensed text-[0.66rem] font-bold tracking-[0.22em] uppercase text-mesa/50 mt-1.5">
                   {a.zips[0]} · {a.drivingMinutes === 0 ? 'HQ' : `${a.drivingMinutes} min`}
                 </span>
               </Link>
             </li>
           ))}
         </ul>
-
-        <div className="text-center mt-10">
-          <Link href="/service-areas" className="btn-red">View Service Area Map</Link>
-        </div>
       </div>
     </section>
   );
