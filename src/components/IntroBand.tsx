@@ -2,35 +2,49 @@ import { introBand } from '@/lib/content';
 
 export function IntroBand() {
   return (
-    <section className="sand-divider py-16 px-[5vw] relative">
-      <div className="flex items-center justify-center gap-14 flex-wrap max-w-[1200px] mx-auto">
-        {introBand.map((item, i) => (
-          <div key={item.label} className="flex items-center gap-4 text-text">
-            <span
-              aria-hidden
-              className="flex items-center justify-center w-[58px] h-[58px] rounded-full bg-bone border border-terracotta/25 shadow-[0_4px_14px_-6px_rgba(140,58,30,0.35)] text-[1.7rem]"
+    <section className="plaster-bg relative py-14 md:py-20 px-[5vw]">
+      <div className="max-w-[1300px] mx-auto">
+        <ul
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10 lg:gap-y-0 list-none m-0 p-0 lg:divide-x lg:divide-adobe/15"
+          aria-label="Why customers choose us"
+        >
+          {introBand.map((item, i) => (
+            <li
+              key={item.label}
+              className="flex items-start gap-5 lg:px-8 first:lg:pl-0 last:lg:pr-0 sm:border-b sm:border-adobe/10 sm:pb-8 lg:border-b-0 lg:pb-0 sm:[&:nth-child(n+3)]:border-b-0 sm:[&:nth-child(n+3)]:pb-0"
             >
-              {item.icon}
-            </span>
-            <div>
-              <div className="font-extrabold text-base text-mesa">{item.label}</div>
-              <div className="text-[0.82rem] text-mesa/65 font-semibold mt-0.5">{item.sub}</div>
-            </div>
-            {i < introBand.length - 1 && (
-              <span
-                aria-hidden
-                className="hidden md:block w-px h-[50px] ml-10"
-                style={{
-                  background:
-                    'linear-gradient(180deg, transparent 0%, rgba(140,58,30,0.25) 50%, transparent 100%)',
-                }}
-              />
-            )}
-          </div>
-        ))}
+              {/* Editorial italic-serif numeral */}
+              <div className="flex flex-col items-center pt-1">
+                <span
+                  aria-hidden
+                  className="font-serif italic text-terracotta text-[2.4rem] leading-none"
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span
+                  aria-hidden
+                  className="w-px h-8 bg-gradient-to-b from-terracotta/40 to-transparent mt-2"
+                />
+              </div>
+
+              <div className="flex-1 min-w-0">
+                <span className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase font-bold text-terracotta block mb-1.5">
+                  {`Reason ${String(i + 1).padStart(2, '0')}`}
+                </span>
+                <h3 className="font-display text-[1.55rem] tracking-wide text-mesa leading-[1.05] mb-1.5">
+                  {item.label}
+                </h3>
+                <p className="font-serif italic text-mesa/70 text-[1rem] leading-[1.45] m-0">
+                  {item.sub}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
+
       {/* Adobe brick stripe at the bottom edge */}
-      <div aria-hidden className="adobe-stripe h-[6px] absolute bottom-0 inset-x-0 opacity-90" />
+      <div aria-hidden className="adobe-stripe h-[6px] absolute bottom-0 inset-x-0 opacity-95" />
     </section>
   );
 }
