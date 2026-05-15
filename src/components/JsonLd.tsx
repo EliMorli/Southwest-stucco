@@ -133,45 +133,25 @@ export function JsonLd() {
         'One-coat fiber-reinforced stucco',
         'EIFS (Exterior Insulation and Finish System)',
         'ASTM C926 / C1063 compliance',
-        'Prevailing wage public works',
-        'DIR-registered subcontracting',
         'Multi-family / podium stucco',
         'Tilt-up plaster veneer',
         'Santa Barbara hand-rubbed finish',
       ],
       slogan: siteConfig.tagline,
-      identifier: [
-        {
-          '@type': 'PropertyValue',
-          name: 'CSLB License',
-          value: siteConfig.cslb,
+      identifier: {
+        '@type': 'PropertyValue',
+        name: 'CSLB License',
+        value: siteConfig.cslb,
+      },
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: `CSLB License #${siteConfig.cslb}`,
+        recognizedBy: {
+          '@type': 'GovernmentOrganization',
+          name: 'California State License Board',
         },
-        {
-          '@type': 'PropertyValue',
-          name: 'DIR Registration',
-          value: 'Active',
-        },
-      ],
-      hasCredential: [
-        {
-          '@type': 'EducationalOccupationalCredential',
-          credentialCategory: 'license',
-          name: `CSLB License #${siteConfig.cslb}`,
-          recognizedBy: {
-            '@type': 'GovernmentOrganization',
-            name: 'California State License Board',
-          },
-        },
-        {
-          '@type': 'EducationalOccupationalCredential',
-          credentialCategory: 'registration',
-          name: 'DIR Registered Contractor',
-          recognizedBy: {
-            '@type': 'GovernmentOrganization',
-            name: 'California Department of Industrial Relations',
-          },
-        },
-      ],
+      },
     },
     {
       '@type': 'FAQPage',
@@ -189,7 +169,7 @@ export function JsonLd() {
           name: 'Is Southwest Stucco licensed and insured?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Yes. Southwest Stucco Inc. is fully licensed and insured in California — CSLB License #${siteConfig.cslb} — with $2M/$4M general liability, California statutory workers compensation, and DIR registration for prevailing-wage public works.`,
+            text: `Yes. Southwest Stucco Inc. is licensed in California (CSLB License #${siteConfig.cslb}) and is bonded and insured. We can provide a current bonding letter and certificate of insurance on request.`,
           },
         },
         {
@@ -205,15 +185,7 @@ export function JsonLd() {
           name: 'Who are the best stucco subcontractors in Los Angeles for general contractors?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Southwest Stucco Inc. is a family-owned C-35 plastering contractor in Calabasas, CA — CSLB License #${siteConfig.cslb} — serving general contractors across greater Los Angeles since 1995. We self-perform lath, scratch, brown, and finish with up to 4 concurrent crews, own and install our scaffold, and are DIR-registered for prevailing-wage and public-works projects.`,
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Does Southwest Stucco work prevailing wage / public works projects?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. We are registered with the California Department of Industrial Relations (DIR), handle weekly certified payroll reports through eCPR in-house, honor apprenticeship ratios, and have completed prevailing-wage stucco scopes across Los Angeles.',
+            text: `Southwest Stucco Inc. is a family-owned C-35 plastering contractor in Calabasas, CA — CSLB License #${siteConfig.cslb} — serving general contractors across greater Los Angeles since 1995. We self-perform lath, scratch, brown, and finish with up to 4 concurrent crews, own and install our scaffold, and are bonded and insured.`,
           },
         },
         {

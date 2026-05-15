@@ -215,7 +215,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'how-to-vet-a-stucco-subcontractor',
     title: 'How to Vet a Stucco Subcontractor in Los Angeles (A PM Checklist)',
     description:
-      'A practical vetting checklist for general contractor project managers hiring a stucco sub in Los Angeles — license, DIR, bonding, crew capacity, scope clarity, and the red flags worth walking away from.',
+      'A practical vetting checklist for general contractor project managers hiring a stucco sub in Los Angeles — license, bonding, crew capacity, scope clarity, and the red flags worth walking away from.',
     category: 'For General Contractors',
     audience: 'gc',
     readingMinutes: 8,
@@ -227,31 +227,28 @@ export const blogPosts: BlogPost[] = [
 <h2>1. License + classification (and verify it)</h2>
 <p>In California, look for an active <strong>C-35 Lathing and Plastering</strong> contractor or a <strong>B General Building</strong> with C-35 supervision in place. Verify the number at <strong>cslb.ca.gov</strong> — confirm active status, no disciplinary action, and a recent renewal. A clean CSLB record is the bare minimum.</p>
 
-<h2>2. DIR registration for prevailing wage</h2>
-<p>If the project is public works or hits prevailing wage thresholds, the sub must be registered with the <strong>California Department of Industrial Relations (DIR)</strong>. Pull their DIR number. If they cannot produce one, they cannot legally bid the work.</p>
-
-<h2>3. Insurance limits and additional insured</h2>
+<h2>2. Insurance limits and additional insured</h2>
 <p>Get a current Certificate of Insurance: General Liability with at least $1M / $2M aggregate, Workers’ Compensation per California statute, and Auto Liability. Confirm the sub will name your firm and the owner as <strong>additional insured</strong> and waive subrogation — most master subcontract agreements require it.</p>
 
-<h2>4. Bonding capacity</h2>
+<h2>3. Bonding capacity</h2>
 <p>For projects above $1M of stucco scope, ask the sub for a current letter from their bonding agent stating single-job and aggregate capacity. A real bonding letter tells you a lot about the financial backbone of the company — small subs that bid above their bonding limits are a project risk.</p>
 
-<h2>5. Crew capacity and self-perform percentage</h2>
+<h2>4. Crew capacity and self-perform percentage</h2>
 <p>Ask flat-out: how many crews do you run, what is each crew's weekly brown-coat production, and what percentage of the work is self-performed vs. sub-subbed? On commercial stucco, you want a sub that self-performs lath, scratch, brown, and finish — not someone who is going to broker your job to three smaller crews you have never met.</p>
 
-<h2>6. Scaffold and equipment</h2>
+<h2>5. Scaffold and equipment</h2>
 <p>Does the sub own and install their own scaffold, or are they hiring a third-party scaffold contractor? Owned scaffold means tighter schedule control and one less day-rate creep risk on your job. Ask about owned mixers, mast climbers, and lifts as well.</p>
 
-<h2>7. Reference projects of similar size and type</h2>
+<h2>6. Reference projects of similar size and type</h2>
 <p>Three references from completed projects within the last 24 months, ideally with another GC's superintendent's direct phone number. Drive by at least one completed project and look at the wall. If you can spot patches, mismatched textures, or hairline cracking patterns at openings, that is your answer.</p>
 
-<h2>8. Submittal turnaround</h2>
+<h2>7. Submittal turnaround</h2>
 <p>Ask the sub how long they need for a complete submittal package: mock-up boards, control joint layouts, color samples, manufacturer cut sheets, and shop drawings if EIFS is in scope. The professional answer is 5–10 business days from contract execution. "We'll get you something" is not an answer.</p>
 
-<h2>9. Mock-up willingness</h2>
+<h2>8. Mock-up willingness</h2>
 <p>A real stucco sub will mock up a 4×4 sample on the actual building before committing the elevations. If they push back on that, walk away — you are going to be arguing about color and texture on every floor for the duration of the job.</p>
 
-<h2>10. Communication cadence</h2>
+<h2>9. Communication cadence</h2>
 <p>Who is your point of contact during construction — the owner, a PM, a foreman? Will they attend weekly OAC meetings? Are they reachable on weekends if there is a weather issue mid-pour? Bad communication is the single biggest source of stucco-related schedule slips.</p>
 
 <h2>Red flags worth walking away from</h2>
@@ -260,11 +257,10 @@ export const blogPosts: BlogPost[] = [
   <li><strong>No physical office or yard.</strong> Stucco subs need a real laydown yard. A PO box is a flag.</li>
   <li><strong>Cannot produce a sample of past commercial work the same size as yours.</strong> Residential subs cannot scale to mid-rise without learning on your job.</li>
   <li><strong>Resistant to mock-ups, submittals, or pre-installation meetings.</strong> You will pay for this resistance in re-work.</li>
-  <li><strong>No DIR number on a prevailing-wage project.</strong> Non-starter.</li>
 </ul>
 
 <h2>About Southwest Stucco</h2>
-<p>We are a family-owned stucco contractor based in Calabasas, working with general contractors across Los Angeles since 1995. Multi-crew commercial capability, owned scaffold and equipment, DIR-registered, fully bonded. If you are vetting subs for a commercial project, <a href="/general-contractors">see our trade partner page</a> or call us at (818) 888-8554 to talk through your scope.</p>
+<p>We are a family-owned stucco contractor based in Calabasas, working with general contractors across Los Angeles since 1995. Multi-crew commercial capability, owned scaffold and equipment, bonded and insured. If you are vetting subs for a commercial project, <a href="/general-contractors">see our trade partner page</a> or call us at (818) 888-8554 to talk through your scope.</p>
     `,
   },
 
@@ -437,76 +433,6 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Talk through your scope before bid day</h2>
 <p>If you have a project coming up and want a stucco sub to review your draft SOW, we do this for GCs we work with as part of pre-construction. Call (818) 888-8554 or use the <a href="/general-contractors">GC contact form</a>.</p>
-    `,
-  },
-
-  {
-    slug: 'prevailing-wage-stucco-california',
-    title: 'Prevailing Wage Stucco Work in California: What GCs Need to Know',
-    description:
-      'A practical primer on prevailing wage stucco work in California — when it applies, DIR registration, certified payroll, classification of plasterers and laborers, and the most common compliance mistakes.',
-    category: 'For General Contractors',
-    audience: 'gc',
-    readingMinutes: 7,
-    publishedAt: '2026-01-30',
-    cover: '/gallery/gallery-17.jpg',
-    body: `
-<p>If you bid public works in California — schools, municipal buildings, affordable housing with public financing, transit projects — your stucco sub needs to be prevailing-wage capable. Here is a practical primer on what that actually means for the stucco scope.</p>
-
-<h2>When prevailing wage applies</h2>
-<p>California prevailing wage requirements (Labor Code §§ 1720 et seq.) apply to most public works projects funded with state or local public money. The triggers include:</p>
-<ul>
-  <li>Construction, alteration, demolition, or repair work on a public works project</li>
-  <li>Affordable housing financed in whole or part with public funds</li>
-  <li>Charter school construction</li>
-  <li>Any project specifically referenced in the contract documents as prevailing wage</li>
-</ul>
-<p>If the bid documents reference DIR PWC-100 or include prevailing wage determinations, the project is prevailing wage. Verify with the awarding body if there is any ambiguity.</p>
-
-<h2>DIR registration is mandatory</h2>
-<p>Every contractor and subcontractor on a California public works project must be <strong>registered with the Department of Industrial Relations</strong> at the time of bid and at the time of work performance. The DIR number is non-transferable, must be renewed annually, and a lapse is a compliance event the awarding body cares about.</p>
-<p>You cannot legally award a stucco subcontract on a public works project to a sub without active DIR registration. Confirm it in writing at bid day, then again at contract execution.</p>
-
-<h2>Classification of plasterers</h2>
-<p>The California prevailing wage determination publishes separate scales for the plastering trades. For stucco work, the most relevant classifications are:</p>
-<ul>
-  <li><strong>Plasterer</strong> — applies the cement plaster, finishes</li>
-  <li><strong>Plasterer Tender</strong> — mixes, hods, supports the plasterer</li>
-  <li><strong>Lather</strong> — installs metal lath and accessories (sometimes carried as Carpenter, depending on jurisdiction)</li>
-</ul>
-<p>Each has its own base hourly rate, fringe benefits, and apprenticeship contribution. Get the current determination for the project county at <strong>dir.ca.gov</strong>. Determinations are published twice a year and the project's "begin date of work" controls which determination applies.</p>
-
-<h2>Certified payroll</h2>
-<p>The sub submits weekly certified payroll reports (CPRs) through the DIR's <strong>eCPR</strong> system. Every employee, every hour, every classification, every fringe, every benefit. The GC and the awarding body both rely on these reports for compliance.</p>
-<p>Late or missing CPRs can hold up your progress payments. We have seen GCs hold a sub's retention because of CPR issues — make sure your stucco sub has the back-office capability to do this correctly.</p>
-
-<h2>Apprenticeship requirements</h2>
-<p>For projects above $30,000, contractors must use apprentices in approved ratios — typically 1 apprentice hour for every 5 journeyman hours in the plastering trade. The sub must contact the apprenticeship committee within the prescribed window and document the request. Failing to do so is the second-most-common compliance miss after late CPRs.</p>
-
-<h2>Skilled and trained workforce (SB 35 and similar)</h2>
-<p>Some public projects require a <strong>skilled and trained workforce</strong>, which is a higher standard than prevailing wage — it requires a percentage of journeyworkers who have graduated from an approved apprenticeship program. If your project is governed by SB 35 or a project labor agreement (PLA), confirm your sub can meet the workforce requirements before contract.</p>
-
-<h2>The compliance mistakes we see most often</h2>
-<ol>
-  <li><strong>Late or missing certified payroll</strong> — sub has the field crew but not the back office</li>
-  <li><strong>Wrong classification</strong> — paying a Plasterer Tender rate to someone doing Plasterer work</li>
-  <li><strong>Missed apprenticeship contributions</strong> — must be paid every period, not just at job close</li>
-  <li><strong>Travel and subsistence</strong> on projects outside the contractor's "home county" — frequently overlooked</li>
-  <li><strong>Fringe benefit accounting</strong> — paying fringes in cash vs. into approved plans, with different tax implications</li>
-</ol>
-
-<h2>Vetting a sub for PW capability</h2>
-<p>When you are looking at a sub for a prevailing wage stucco scope, ask:</p>
-<ul>
-  <li>Current DIR registration number, with renewal date</li>
-  <li>Most recent CPR submission for an active PW project (redacted)</li>
-  <li>Apprentice training program participation</li>
-  <li>Sample certified payroll process documentation</li>
-  <li>Three PW project references</li>
-</ul>
-
-<h2>Southwest Stucco and prevailing wage</h2>
-<p>We are DIR-registered, run a back office equipped to handle weekly CPRs, and have completed public-works and affordable-housing stucco scopes across Los Angeles. If you have a PW project coming up, reach us at (818) 888-8554 or use the <a href="/general-contractors">GC contact form</a> to schedule a pre-bid conversation.</p>
     `,
   },
 ];
