@@ -6,6 +6,7 @@ import { PageHero } from '@/components/PageHero';
 import { CtaStrip } from '@/components/CtaStrip';
 import { blogPosts, getPost } from '@/lib/blog';
 import { siteConfig } from '@/lib/site-config';
+import { primaryAuthor } from '@/lib/authors';
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -75,9 +76,30 @@ export default async function BlogPostPage(props: {
             />
           </div>
           <div
-            className="prose-sws text-bone/85 leading-[1.85] [&_h2]:font-display [&_h2]:text-bone [&_h2]:text-[1.7rem] [&_h2]:tracking-wide [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-bone [&_h3]:font-bold [&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_li]:mb-2 [&_strong]:text-bone [&_a]:text-clay [&_a]:underline [&_a:hover]:text-sun"
+            className="prose-sws text-bone/85 leading-[1.85] [&_h2]:font-display [&_h2]:text-bone [&_h2]:text-[1.7rem] [&_h2]:tracking-wide [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-bone [&_h3]:font-bold [&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_li]:mb-2 [&_strong]:text-bone [&_a]:text-clay [&_a]:underline [&_a:hover]:text-sun [&_table]:w-full [&_table]:my-6 [&_table]:text-left [&_th]:font-bold [&_th]:text-bone [&_th]:py-2 [&_th]:px-3 [&_th]:border-b [&_th]:border-sun/20 [&_td]:py-2 [&_td]:px-3 [&_td]:border-b [&_td]:border-sun/10"
             dangerouslySetInnerHTML={{ __html: p.body }}
           />
+
+          {/* Author byline / E-E-A-T card */}
+          <aside className="mt-14 pt-8 border-t border-sun/15 flex gap-5 items-start">
+            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-sun/40 to-terracotta/30 border border-sun/30 flex items-center justify-center text-clay text-xl font-serif italic">
+              SS
+            </div>
+            <div>
+              <p className="font-condensed text-[0.66rem] tracking-[0.32em] uppercase text-sun/70 font-bold m-0 mb-1">
+                Written by
+              </p>
+              <p className="font-display text-[1.25rem] tracking-wide text-bone m-0">
+                {primaryAuthor.name}
+              </p>
+              <p className="font-serif italic text-clay text-[0.95rem] mt-0.5">
+                {primaryAuthor.role}
+              </p>
+              <p className="text-bone/65 text-[0.92rem] leading-[1.7] mt-3 max-w-[640px]">
+                {primaryAuthor.bio}
+              </p>
+            </div>
+          </aside>
         </article>
       </section>
 
@@ -131,7 +153,13 @@ export default async function BlogPostPage(props: {
             dateModified: p.updatedAt || p.publishedAt,
             url: `${siteConfig.url}/blog/${p.slug}`,
             image: `${siteConfig.url}${p.cover}`,
-            author: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+            author: {
+              '@type': 'Person',
+              '@id': `${siteConfig.url}/#author`,
+              name: primaryAuthor.name,
+              jobTitle: primaryAuthor.role,
+              url: primaryAuthor.url,
+            },
             publisher: {
               '@type': 'Organization',
               name: siteConfig.name,

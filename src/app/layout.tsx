@@ -7,6 +7,8 @@ import { Footer } from '@/components/Footer';
 import { StickyCallButton } from '@/components/StickyCallButton';
 import { CookieConsent } from '@/components/CookieConsent';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { MicrosoftClarity } from '@/components/MicrosoftClarity';
+import { AnalyticsListener } from '@/components/AnalyticsListener';
 import './globals.css';
 
 const bebas = Bebas_Neue({
@@ -116,10 +118,17 @@ export const metadata: Metadata = {
     'geo.position': `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
     ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION || '',
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID || '';
+  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID || '';
   return (
     <html lang="en" className={`${bebas.variable} ${nunito.variable} ${barlow.variable} ${cormorant.variable}`}>
       <head>
@@ -137,7 +146,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <StickyCallButton />
         <CookieConsent />
+        <AnalyticsListener />
         {gaId && <GoogleAnalytics id={gaId} />}
+        {clarityId && <MicrosoftClarity id={clarityId} />}
       </body>
     </html>
   );

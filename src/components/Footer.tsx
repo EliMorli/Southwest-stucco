@@ -128,6 +128,12 @@ export function Footer() {
             >
               Free Estimate
             </Link>
+            <Link
+              href="/general-contractors"
+              className="text-[0.78rem] font-extrabold tracking-[0.05em] border border-sun/40 text-bone px-4 py-2 rounded-full no-underline hover:border-sun"
+            >
+              For GCs
+            </Link>
           </div>
         </address>
       </div>
