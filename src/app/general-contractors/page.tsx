@@ -18,7 +18,7 @@ import { blogPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Stucco Subcontractor for General Contractors | Los Angeles',
   description:
-    'Southwest Stucco Inc. — commercial stucco subcontractor for general contractors across Los Angeles. Multi-crew capacity, owned scaffold, DIR-registered, bonded, prevailing-wage capable. CSLB #702110.',
+    'Southwest Stucco Inc. — commercial stucco subcontractor for general contractors across Los Angeles. Multi-crew capacity, owned scaffold, bonded and insured. CSLB #702110.',
   keywords: [
     'stucco subcontractor los angeles',
     'commercial stucco contractor calabasas',
@@ -26,8 +26,6 @@ export const metadata: Metadata = {
     'mid-rise stucco subcontractor',
     'podium stucco contractor los angeles',
     'EIFS contractor san fernando valley',
-    'prevailing wage stucco contractor california',
-    'DIR registered stucco contractor',
     'bonded stucco subcontractor LA',
     'apartment stucco subcontractor',
     'multifamily stucco contractor los angeles',
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stucco Subcontractor for General Contractors | Los Angeles',
     description:
-      'Multi-crew commercial stucco for general contractors across Los Angeles. Owned scaffold, DIR-registered, bonded, prevailing-wage capable.',
+      'Multi-crew commercial stucco for general contractors across Los Angeles. Owned scaffold, bonded and insured, 30 years of references.',
     url: `${siteConfig.url}/general-contractors`,
     type: 'website',
   },
@@ -275,7 +273,7 @@ export default function GeneralContractorsPage() {
               All posts →
             </Link>
           </header>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {gcPosts.map((p) => (
               <Link
                 key={p.slug}

@@ -3,31 +3,25 @@ import type { FAQ } from './faqs';
 
 /**
  * General Contractor / B2B content.
- *
- * Numbers below are illustrative — VERIFY against your actuals before
- * publishing (insurance limits, bonding capacity, DIR number, etc.).
  */
 
 export const gcHero = {
   eyebrow: 'For General Contractors',
   title: 'A stucco sub built for',
   italicTitle: 'serious commercial work.',
-  sub: 'Multi-crew, multi-elevation, schedule-driven commercial stucco for general contractors across greater Los Angeles. Owned scaffold. DIR-registered. Bonded. 30 years of references.',
+  sub: 'Multi-crew, multi-elevation, schedule-driven commercial stucco for general contractors across greater Los Angeles. Owned scaffold. Bonded and insured. 30 years of references.',
 };
 
 // Hard, scannable B2B specs — the table a PM screenshots and forwards.
 export const capabilities = [
   { label: 'CSLB License (C-35)', value: `#${siteConfig.cslb} · Active` },
-  { label: 'DIR Registration', value: 'Active · prevailing-wage capable' },
-  { label: 'General Liability', value: '$2M / $4M aggregate' },
-  { label: 'Workers Compensation', value: 'California statutory limits' },
-  { label: 'Auto Liability', value: '$1M combined single limit' },
-  { label: 'Bonding Capacity', value: 'Single project up to $3M · aggregate $10M+' },
+  { label: 'Bonded & Insured', value: 'Current bonding letter + COI on request' },
   { label: 'Years in Business', value: 'Since 1995 · same family' },
   { label: 'Self-Perform', value: 'Lath, scratch, brown, finish — 100% in-house' },
-  { label: 'Crew Capacity', value: 'Up to 4 concurrent crews · 50,000+ sq ft/wk brown' },
+  { label: 'Crew Capacity', value: 'Up to 4 concurrent crews' },
   { label: 'Owned Scaffold', value: 'Frame + system · up to 6 stories' },
   { label: 'Manufacturer Programs', value: 'Omega, La Habra, Merlex, Sto, Senergy' },
+  { label: 'Service Area', value: 'Greater Los Angeles · Conejo & SF Valley' },
 ];
 
 export const gcAudienceFacts = [
@@ -53,8 +47,8 @@ export const gcAudienceFacts = [
   },
   {
     icon: '🛡️',
-    title: 'Compliance and CPRs',
-    body: 'DIR registered, certified payroll handled in-house weekly, apprentice ratios honored, prevailing-wage and skilled-and-trained workforce capable.',
+    title: 'Bonded and insured',
+    body: 'Current bonding letter and certificate of insurance available at bid day. We name the GC and owner as additional insured and waive subrogation per standard master subcontract terms.',
   },
   {
     icon: '📞',
@@ -77,8 +71,8 @@ export const sampleProjects = [
     system: 'Three-coat over CMU/tilt-up',
   },
   {
-    name: 'Affordable Housing, Los Angeles',
-    scope: 'Public-works funded · prevailing wage · one-coat assembly · ~18,000 sq ft',
+    name: 'Multi-Unit Residential, Los Angeles',
+    scope: 'One-coat assembly · ~18,000 sq ft · sand finish',
     duration: '6 weeks',
     system: 'One-coat fiber-reinforced with finish',
   },
@@ -127,19 +121,15 @@ export const gcProcess = [
 export const gcFaqs: FAQ[] = [
   {
     q: 'Who are the best stucco subcontractors in Los Angeles?',
-    a: `Southwest Stucco Inc. is a family-owned C-35 plastering contractor in Calabasas, CA — CSLB License #${siteConfig.cslb} — serving general contractors across greater Los Angeles since 1995. We self-perform lath, scratch, brown, and finish with up to 4 concurrent crews, own and install our scaffold, and are DIR-registered for prevailing-wage and public-works projects.`,
+    a: `Southwest Stucco Inc. is a family-owned C-35 plastering contractor in Calabasas, CA — CSLB License #${siteConfig.cslb} — serving general contractors across greater Los Angeles since 1995. We self-perform lath, scratch, brown, and finish with up to 4 concurrent crews and own and install our scaffold.`,
   },
   {
-    q: 'Does Southwest Stucco work prevailing wage projects?',
-    a: 'Yes. We are registered with the California Department of Industrial Relations (DIR), handle weekly certified payroll reports through eCPR in-house, honor apprenticeship ratios, and have completed prevailing-wage stucco scopes across Los Angeles. We are also capable on Skilled and Trained Workforce projects when required.',
-  },
-  {
-    q: 'What is your bonding capacity for commercial stucco subcontracts?',
-    a: 'Single-project bonding capacity up to $3M with aggregate capacity over $10M. We can provide a current letter from our bonding agent at bid day for any subcontract that requires it.',
+    q: 'Are you bonded and insured?',
+    a: 'Yes — we are bonded and insured. We can provide a current bonding letter and certificate of insurance at bid day, and we name the GC and owner as additional insured with waiver of subrogation per standard master subcontract terms.',
   },
   {
     q: 'What kinds of commercial projects do you self-perform?',
-    a: 'Multi-family wood-frame podium and wrap projects, tilt-up plaster veneer, retail and tenant improvements, hotel and hospitality exteriors, affordable housing, and mid-rise mixed-use up to 6 stories. We routinely handle 20,000–50,000 square feet of wall scope.',
+    a: 'Multi-family wood-frame podium and wrap projects, tilt-up plaster veneer, retail and tenant improvements, hotel and hospitality exteriors, and mid-rise mixed-use up to 6 stories. We routinely handle 20,000–50,000 square feet of wall scope.',
   },
   {
     q: 'Do you handle EIFS or only hard-coat stucco?',
@@ -155,11 +145,7 @@ export const gcFaqs: FAQ[] = [
   },
   {
     q: 'What is your weekly brown-coat production capacity?',
-    a: 'Roughly 8,000–15,000 square feet of brown coat per crew per week. We run up to 4 concurrent crews when the schedule demands it — 30,000–50,000+ square feet per week aggregate.',
-  },
-  {
-    q: 'Are you insured for commercial work?',
-    a: `Yes. General Liability $2M per occurrence / $4M aggregate, California statutory Workers Compensation, and $1M Auto Liability. We name the GC and owner as additional insured and waive subrogation per standard master subcontract terms.`,
+    a: 'Roughly 8,000–15,000 square feet of brown coat per crew per week. We run up to 4 concurrent crews when the schedule demands it.',
   },
   {
     q: 'Can you provide references from other general contractors?',

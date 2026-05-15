@@ -43,7 +43,7 @@ GBP wins the "Map 3-pack" — the three local results that show above the regula
 
 ### GBP description template (paste, edit)
 ```
-Family-owned stucco and plastering contractor in Calabasas, CA, serving Los Angeles homeowners and general contractors since 1995. CSLB License #702110. DIR-registered for prevailing wage.
+Family-owned stucco and plastering contractor in Calabasas, CA, serving Los Angeles homeowners and general contractors since 1995. CSLB License #702110. Bonded and insured.
 
 We self-perform commercial and residential stucco — including three-coat hard-coat, one-coat fiber-reinforced, EIFS, scaffold installation, stucco repair, and custom finishes (smooth, sand, Santa Barbara, lace, dash, acrylic). Multi-crew commercial capacity up to 4 concurrent crews. Owned scaffold inventory up to 6 stories.
 
