@@ -42,12 +42,15 @@ export function Nav() {
           <span className="relative w-[46px] h-[46px] rounded-full overflow-hidden border-2 border-sun bg-bone flex-shrink-0 shadow-[0_0_18px_rgba(212,165,116,0.45)]">
             <Image src="/logo.png" alt="" fill sizes="46px" className="object-cover" priority />
           </span>
-          <span className="leading-[1.15] hidden sm:inline-block">
-            <span className="block font-display text-[1.2rem] tracking-[0.12em] text-bone">
+          <span className="leading-[1.1] inline-block">
+            <span className="block font-display text-[1rem] sm:text-[1.2rem] tracking-[0.1em] sm:tracking-[0.12em] text-bone">
               Southwest <span className="text-clay">Stucco</span>
             </span>
-            <span className="block text-[0.62rem] font-bold tracking-[0.18em] uppercase text-sun/80">
+            <span className="hidden sm:block text-[0.62rem] font-bold tracking-[0.18em] uppercase text-sun/80">
               Family Owned Since 1995
+            </span>
+            <span className="sm:hidden block text-[0.55rem] font-bold tracking-[0.22em] uppercase text-sun/75">
+              Since 1995 · CSLB {siteConfig.cslb}
             </span>
           </span>
         </Link>
