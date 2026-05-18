@@ -96,7 +96,7 @@ body::after {
   font-weight: 700;
   letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--terracotta);
+  color: var(--clay);
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;

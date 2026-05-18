@@ -125,7 +125,7 @@ export function Hero() {
         </div>
 
         {/* Scroll cue */}
-        <div className="hidden md:flex absolute bottom-7 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-bone/45">
+        <div className="hidden md:flex absolute bottom-7 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-bone/70">
           <span className="text-[0.6rem] tracking-[0.42em] uppercase font-bold">Scroll</span>
           <span className="w-px h-12 bg-gradient-to-b from-sun/60 to-transparent" aria-hidden />
         </div>

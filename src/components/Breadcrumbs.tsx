@@ -35,7 +35,7 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
                   {c.label}
                 </span>
               )}
-              {!last && <span className="text-sun/40">/</span>}
+              {!last && <span aria-hidden className="text-sun/70">/</span>}
             </li>
           );
         })}

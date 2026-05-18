@@ -78,7 +78,7 @@ export default function AboutPage() {
       <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1200px] mx-auto">
           <header className="text-center mb-14">
-            <span className="font-condensed text-[0.72rem] font-bold tracking-[0.38em] uppercase text-terracotta mb-3 inline-block">
+            <span className="font-condensed text-[0.72rem] font-bold tracking-[0.38em] uppercase text-adobe mb-3 inline-block">
               How We Work
             </span>
             <h2 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] text-mesa leading-[0.95]">
