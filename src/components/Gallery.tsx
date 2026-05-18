@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import { gallery } from '@/lib/content';
 
-export function Gallery() {
+export function Gallery({ limit }: { limit?: number }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const items = gallery.items;
+  const items = limit ? gallery.items.slice(0, limit) : gallery.items;
 
   const close = useCallback(() => setOpenIdx(null), []);
   const next = useCallback(
@@ -105,6 +105,14 @@ export function Gallery() {
           </button>
         ))}
       </div>
+
+      {limit && gallery.items.length > limit && (
+        <div className="text-center mt-10">
+          <a href="/projects" className="btn-outline">
+            View all {gallery.items.length} projects
+          </a>
+        </div>
+      )}
 
       {openIdx !== null && (
         <div
