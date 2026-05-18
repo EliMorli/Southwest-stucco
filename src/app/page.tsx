@@ -37,7 +37,7 @@ export default function HomePage() {
         attribution="A note from the family"
       />
       <AreaTeaser />
-      <Gallery />
+      <Gallery limit={8} />
       <Testimonials variant="home" limit={6} />
       <BlogTeaser />
       <section className="bg-mesa py-28 px-[5vw]">

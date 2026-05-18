@@ -19,21 +19,21 @@ const bebas = Bebas_Neue({
 });
 
 const nunito = Nunito({
-  weight: ['400', '600', '700', '800', '900'],
+  weight: ['400', '600', '700', '800'],
   subsets: ['latin'],
   variable: '--font-nunito',
   display: 'swap',
 });
 
 const barlow = Barlow_Condensed({
-  weight: ['400', '700', '900'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-barlow',
   display: 'swap',
 });
 
 const cormorant = Cormorant_Garamond({
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '600'],
   style: ['italic', 'normal'],
   subsets: ['latin'],
   variable: '--font-cormorant',
