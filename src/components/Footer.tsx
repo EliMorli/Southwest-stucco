@@ -119,7 +119,7 @@ export function Footer() {
             <br />
             {siteConfig.address.locality}, {siteConfig.address.region} {siteConfig.address.postalCode}
           </span>
-          <span className="text-[0.78rem] text-sun/55 mt-2">CSLB License #{siteConfig.cslb}</span>
+          <span className="text-[0.78rem] text-sun/80 mt-2">CSLB License #{siteConfig.cslb}</span>
 
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
@@ -138,7 +138,7 @@ export function Footer() {
         </address>
       </div>
 
-      <div className="max-w-[1300px] mx-auto pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-[0.74rem] text-bone/40">
+      <div className="max-w-[1300px] mx-auto pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-[0.74rem] text-bone/65">
         <p className="m-0 text-center md:text-left">{footerCopy.copyright}</p>
         <ul className="list-none m-0 p-0 flex flex-wrap gap-x-4 gap-y-1 justify-center md:justify-end">
           <li><Link href="/privacy-policy" className="hover:text-clay">Privacy</Link></li>

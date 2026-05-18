@@ -9,7 +9,7 @@ export function AreaTeaser() {
         <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-14">
           <div className="section-num text-adobe">04</div>
           <div>
-            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-terracotta font-bold block mb-2">
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold block mb-2">
               Where We Work
             </span>
             <div className="thin-rule-dark max-w-[260px]" aria-hidden />
@@ -52,7 +52,7 @@ export function AreaTeaser() {
                 <span className="block font-display text-[1.4rem] tracking-wide text-mesa group-hover:text-terracotta transition-colors leading-tight">
                   {a.city}
                 </span>
-                <span className="block font-condensed text-[0.66rem] font-bold tracking-[0.22em] uppercase text-mesa/50 mt-1.5">
+                <span className="block font-condensed text-[0.66rem] font-bold tracking-[0.22em] uppercase text-mesa/70 mt-1.5">
                   {a.zips[0]} · {a.drivingMinutes === 0 ? 'HQ' : `${a.drivingMinutes} min`}
                 </span>
               </Link>

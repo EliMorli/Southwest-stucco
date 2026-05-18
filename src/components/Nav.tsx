@@ -70,7 +70,7 @@ export function Nav() {
                 }`}
               >
                 {l.label}
-                {l.mega && <span className="ml-1 text-sun/50 text-[0.7rem]">▾</span>}
+                {l.mega && <span className="ml-1 text-sun/80 text-[0.7rem]">▾</span>}
               </Link>
             </li>
           ))}

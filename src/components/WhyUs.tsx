@@ -13,7 +13,7 @@ export function WhyUs() {
         <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-16">
           <div className="section-num text-adobe">02</div>
           <div>
-            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-terracotta font-bold block mb-2">
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold block mb-2">
               {whyUs.eyebrow}
             </span>
             <div className="thin-rule-dark max-w-[260px]" aria-hidden />

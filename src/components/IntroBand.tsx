@@ -28,7 +28,7 @@ export function IntroBand() {
               </div>
 
               <div className="flex-1 min-w-0">
-                <span className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase font-bold text-terracotta block mb-1.5">
+                <span className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase font-bold text-adobe block mb-1.5">
                   {`Reason ${String(i + 1).padStart(2, '0')}`}
                 </span>
                 <h3 className="font-display text-[1.55rem] tracking-wide text-mesa leading-[1.05] mb-1.5">
