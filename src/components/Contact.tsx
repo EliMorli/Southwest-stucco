@@ -56,7 +56,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 px-[5vw] grid md:grid-cols-2 gap-20 relative overflow-hidden bg-mesa-fade"
+      className="py-32 px-[5vw] grid md:grid-cols-2 gap-20 relative overflow-hidden bg-sand-fade"
     >
       <div
         aria-hidden
@@ -68,26 +68,26 @@ export function Contact() {
       />
       <div className="relative">
         <span className="eyebrow">{contact.eyebrow}</span>
-        <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.95] text-bone mt-3 mb-6">
+        <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[0.95] text-mesa mt-3 mb-6">
           {contact.title.line1}
           <br />
           <span
             className="bg-clip-text text-transparent"
             style={{
               backgroundImage:
-                'linear-gradient(90deg, #E07B4A 0%, #D4A574 100%)',
+                'linear-gradient(90deg, #C2562B 0%, #8C3A1E 100%)',
             }}
           >
             {contact.title.line2}
           </span>
         </h2>
-        <p className="text-base italic text-bone/55 leading-[1.85] mb-10">{contact.desc}</p>
+        <p className="text-base italic text-mesa/70 leading-[1.85] mb-10">{contact.desc}</p>
 
         <dl className="space-y-0">
           {contact.info.map((i) => (
             <div
               key={i.label}
-              className="flex gap-4 items-start py-5 border-b border-sun/12"
+              className="flex gap-4 items-start py-5 border-b border-adobe/15"
             >
               <span
                 aria-hidden
@@ -96,12 +96,12 @@ export function Contact() {
                 {i.icon}
               </span>
               <div>
-                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-sun/75 mb-1">
+                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-adobe font-bold mb-1">
                   {i.label}
                 </dt>
-                <dd className="m-0 text-base text-bone font-semibold leading-[1.5] whitespace-pre-line">
+                <dd className="m-0 text-base text-mesa font-semibold leading-[1.5] whitespace-pre-line">
                   {i.href ? (
-                    <a className="hover:text-clay transition-colors no-underline" href={i.href}>
+                    <a className="hover:text-terracotta transition-colors no-underline" href={i.href}>
                       {i.value}
                     </a>
                   ) : (
@@ -114,20 +114,20 @@ export function Contact() {
         </dl>
       </div>
 
-      <div className="relative bg-mesa-100/70 border border-sun/15 rounded-2xl p-8 md:p-10 self-start backdrop-blur-sm shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
+      <div className="relative bg-bone border border-adobe/15 rounded-2xl p-8 md:p-10 self-start shadow-[0_20px_50px_-20px_rgba(41,29,20,0.25)]">
         {/* Corner sun */}
         <div
           aria-hidden
           className="absolute -top-8 -right-8 w-24 h-24 rounded-full pointer-events-none opacity-80"
           style={{
             background:
-              'radial-gradient(circle, rgba(212,165,116,0.45) 0%, transparent 70%)',
+              'radial-gradient(circle, rgba(212,165,116,0.55) 0%, transparent 70%)',
           }}
         />
-        <h3 className="font-display text-[2.1rem] tracking-wide text-bone mb-1 relative">
+        <h3 className="font-display text-[2.1rem] tracking-wide text-mesa mb-1 relative">
           {contact.form.title}
         </h3>
-        <p className="text-sm text-sun/80 mb-8 italic relative">{contact.form.sub}</p>
+        <p className="text-sm text-adobe mb-8 italic relative">{contact.form.sub}</p>
 
         <form onSubmit={onSubmit} noValidate className="relative">
           <div className="hidden" aria-hidden>
@@ -218,12 +218,12 @@ export function Contact() {
           </button>
 
           {status === 'success' && (
-            <div className="mt-4 bg-sage/20 border border-sage/50 rounded-lg p-4 text-center text-bone font-bold">
+            <div className="mt-4 bg-sage/20 border border-sage/50 rounded-lg p-4 text-center text-mesa font-bold">
               {contact.form.successMsg}
             </div>
           )}
           {status === 'error' && (
-            <div className="mt-4 bg-terracotta/15 border border-terracotta rounded-lg p-4 text-center text-bone font-bold">
+            <div className="mt-4 bg-terracotta/15 border border-terracotta rounded-lg p-4 text-center text-adobe font-bold">
               {errorMsg}
             </div>
           )}
@@ -243,10 +243,10 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mb-3 [&_input]:w-full [&_select]:w-full [&_textarea]:w-full [&_input]:bg-mesa/60 [&_select]:bg-mesa/60 [&_textarea]:bg-mesa/60 [&_input]:border [&_select]:border [&_textarea]:border [&_input]:border-sun/15 [&_select]:border-sun/15 [&_textarea]:border-sun/15 [&_input]:rounded-lg [&_select]:rounded-lg [&_textarea]:rounded-lg [&_input]:text-bone [&_select]:text-bone [&_textarea]:text-bone [&_input]:px-4 [&_select]:px-4 [&_textarea]:px-4 [&_input]:py-3 [&_select]:py-3 [&_textarea]:py-3 [&_input]:outline-none [&_select]:outline-none [&_textarea]:outline-none [&_input:focus]:border-clay [&_select:focus]:border-clay [&_textarea:focus]:border-clay [&_textarea]:min-h-[100px] [&_textarea]:resize-y [&_input::placeholder]:text-bone/55 [&_textarea::placeholder]:text-bone/55 [&_input]:transition-colors [&_select]:transition-colors [&_textarea]:transition-colors">
+    <div className="mb-3 [&_input]:w-full [&_select]:w-full [&_textarea]:w-full [&_input]:bg-sand [&_select]:bg-sand [&_textarea]:bg-sand [&_input]:border [&_select]:border [&_textarea]:border [&_input]:border-adobe/20 [&_select]:border-adobe/20 [&_textarea]:border-adobe/20 [&_input]:rounded-lg [&_select]:rounded-lg [&_textarea]:rounded-lg [&_input]:text-mesa [&_select]:text-mesa [&_textarea]:text-mesa [&_input]:px-4 [&_select]:px-4 [&_textarea]:px-4 [&_input]:py-3 [&_select]:py-3 [&_textarea]:py-3 [&_input]:outline-none [&_select]:outline-none [&_textarea]:outline-none [&_input:focus]:border-terracotta [&_select:focus]:border-terracotta [&_textarea:focus]:border-terracotta [&_textarea]:min-h-[100px] [&_textarea]:resize-y [&_input::placeholder]:text-mesa/55 [&_textarea::placeholder]:text-mesa/55 [&_input]:transition-colors [&_select]:transition-colors [&_textarea]:transition-colors">
       <label
         htmlFor={id}
-        className="block text-[0.72rem] font-bold text-sun/75 mb-1.5 tracking-[0.12em] uppercase"
+        className="block text-[0.72rem] font-bold text-adobe mb-1.5 tracking-[0.12em] uppercase"
       >
         {label}
       </label>

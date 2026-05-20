@@ -39,31 +39,31 @@ export default function AboutPage() {
         crumbs={[{ label: 'About' }]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <div>
             <span className="eyebrow">Our Story</span>
-            <h2 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] text-bone leading-[0.95] mt-3 mb-6">
+            <h2 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] text-mesa leading-[0.95] mt-3 mb-6">
               Built one wall, one customer, one referral at a time.
             </h2>
-            <p className="text-bone/75 leading-[1.85] mb-4">
+            <p className="text-mesa/75 leading-[1.85] mb-4">
               Southwest Stucco Inc. started in 1995 with one truck, one crew, and a phone number our
               founder answered himself. Three decades later, that's still the model: family-owned,
               family-run, and small enough that the people on your job are the same people who
               answer the phone.
             </p>
-            <p className="text-bone/75 leading-[1.85] mb-4">
+            <p className="text-mesa/75 leading-[1.85] mb-4">
               We have crewed up over the years — multiple residential teams, dedicated commercial
               crews, an in-house scaffold operation — but we've never franchised, never bought our
               way into another market, and never taken on a job we didn't think we could do right.
             </p>
-            <p className="text-bone/75 leading-[1.85]">
+            <p className="text-mesa/75 leading-[1.85]">
               Most of our work today still comes from referrals. That tells you everything you need
               to know about how we treat customers.
             </p>
           </div>
 
-          <div className="relative aspect-square rounded-2xl overflow-hidden border border-sun/15 shadow-[0_18px_48px_-16px_rgba(0,0,0,0.6)]">
+          <div className="relative aspect-square rounded-2xl overflow-hidden border border-adobe/15 shadow-[0_18px_48px_-16px_rgba(0,0,0,0.6)]">
             <Image
               src="/gallery/gallery-13.jpg"
               alt="Southwest Stucco crew on a Los Angeles project"
@@ -102,21 +102,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1000px] mx-auto">
           <header className="mb-14 text-center">
             <span className="eyebrow">Three Decades</span>
-            <h2 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] text-bone leading-[0.95] mt-3">
+            <h2 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] text-mesa leading-[0.95] mt-3">
               A few milestones along the way.
             </h2>
           </header>
-          <ol className="relative border-l-2 border-sun/25 ml-3 space-y-8 list-none p-0">
+          <ol className="relative border-l-2 border-adobe/25 ml-3 space-y-8 list-none p-0">
             {milestones.map((m) => (
               <li key={m.year} className="pl-8 relative">
                 <span className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-gradient-to-b from-clay to-terracotta border-2 border-mesa shadow-[0_0_0_3px_rgba(212,165,116,0.25)]" />
-                <div className="font-display text-[1.6rem] tracking-wider text-clay leading-none">{m.year}</div>
-                <h3 className="font-bold text-bone text-[1.1rem] mt-1">{m.title}</h3>
-                <p className="text-bone/70 leading-[1.75] mt-1">{m.body}</p>
+                <div className="font-display text-[1.6rem] tracking-wider text-terracotta leading-none">{m.year}</div>
+                <h3 className="font-bold text-mesa text-[1.1rem] mt-1">{m.title}</h3>
+                <p className="text-mesa/70 leading-[1.75] mt-1">{m.body}</p>
               </li>
             ))}
           </ol>

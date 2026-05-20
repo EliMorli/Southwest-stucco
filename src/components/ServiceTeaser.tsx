@@ -14,29 +14,34 @@ const imageFor: Record<string, string> = {
 
 export function ServiceTeaser() {
   return (
-    <section className="bg-mesa py-32 px-[5vw] relative overflow-hidden">
+    <section className="bg-sand-fade py-32 px-[5vw] relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto relative">
         <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-16">
-          <div className="section-num">03</div>
+          <div className="section-num text-adobe">03</div>
           <div>
-            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/80 font-bold block mb-2">
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold block mb-2">
               What We Do
             </span>
-            <div className="thin-rule max-w-[260px]" aria-hidden />
+            <div className="thin-rule-dark max-w-[260px]" aria-hidden />
           </div>
           <Link
             href="/services"
-            className="hidden md:inline-block font-serif italic text-sun text-[1.1rem] hover:text-clay no-underline border-b border-sun/30 hover:border-clay pb-0.5"
+            className="hidden md:inline-block font-serif italic text-adobe text-[1.1rem] hover:text-terracotta no-underline border-b border-adobe/40 hover:border-terracotta pb-0.5"
           >
             All services →
           </Link>
         </header>
 
         <h2 className="mb-14">
-          <span className="block font-display text-[clamp(2.6rem,6vw,6rem)] leading-[0.92] tracking-[0.005em] text-bone">
+          <span className="block font-display text-[clamp(2.6rem,6vw,6rem)] leading-[0.92] tracking-[0.005em] text-mesa">
             Stucco, plaster &amp; scaffold —
           </span>
-          <span className="block font-serif italic text-[clamp(2.6rem,6.2vw,6.2rem)] leading-[0.92] tracking-[-0.01em] text-sun -mt-1">
+          <span
+            className="block font-serif italic text-[clamp(2.6rem,6.2vw,6.2rem)] leading-[0.92] tracking-[-0.01em] -mt-1 bg-clip-text text-transparent"
+            style={{
+              backgroundImage: 'linear-gradient(90deg, #C2562B 0%, #8C3A1E 100%)',
+            }}
+          >
             all under one roof.
           </span>
         </h2>

@@ -20,8 +20,8 @@ export default function ContactPage() {
         crumbs={[{ label: 'Contact' }]}
       />
       <Contact />
-      <section className="px-[5vw] pb-20 bg-mesa-fade">
-        <div className="max-w-[1100px] mx-auto bg-mesa-100/60 border border-sun/15 rounded-2xl overflow-hidden">
+      <section className="px-[5vw] pb-20 bg-sand-fade">
+        <div className="max-w-[1100px] mx-auto bg-bone border border-adobe/15 rounded-2xl overflow-hidden">
           <iframe
             title={`${siteConfig.name} office location map`}
             src={`https://www.google.com/maps?q=${encodeURIComponent(

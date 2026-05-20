@@ -22,20 +22,20 @@ export default function ServicesPage() {
         crumbs={[{ label: 'Services' }]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1300px] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="group bg-mesa-100/60 border border-sun/12 rounded-2xl p-7 no-underline transition-all hover:border-clay/40 hover:-translate-y-1 flex flex-col"
+              className="group bg-bone border border-adobe/15 rounded-2xl p-7 no-underline transition-all hover:border-terracotta/40 hover:-translate-y-1 flex flex-col"
             >
               <span className="text-[2rem]" aria-hidden>{s.icon}</span>
-              <h2 className="font-display text-[1.5rem] tracking-wide text-bone mt-3 mb-2 group-hover:text-clay transition-colors">
+              <h2 className="font-display text-[1.5rem] tracking-wide text-mesa mt-3 mb-2 group-hover:text-terracotta transition-colors">
                 {s.name}
               </h2>
-              <p className="text-bone/65 text-[0.92rem] leading-[1.7] flex-1">{s.short}</p>
-              <span className="text-clay text-sm font-bold mt-5">Learn more →</span>
+              <p className="text-mesa/65 text-[0.92rem] leading-[1.7] flex-1">{s.short}</p>
+              <span className="text-terracotta text-sm font-bold mt-5">Learn more →</span>
             </Link>
           ))}
         </div>

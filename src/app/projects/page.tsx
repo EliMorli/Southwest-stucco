@@ -22,13 +22,13 @@ export default function ProjectsPage() {
         crumbs={[{ label: 'Projects' }]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1300px] mx-auto">
           <header className="mb-10">
-            <span className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/80">
+            <span className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-adobe">
               Featured Case Studies
             </span>
-            <h2 className="font-display text-[clamp(1.9rem,3.6vw,3rem)] text-bone leading-[0.95] mt-2">
+            <h2 className="font-display text-[clamp(1.9rem,3.6vw,3rem)] text-mesa leading-[0.95] mt-2">
               A closer look at three jobs.
             </h2>
           </header>
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
             {projects.map((p) => (
               <article
                 key={p.slug}
-                className="bg-mesa-100/60 border border-sun/12 rounded-2xl overflow-hidden flex flex-col"
+                className="bg-bone border border-adobe/15 rounded-2xl overflow-hidden flex flex-col"
               >
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -47,28 +47,28 @@ export default function ProjectsPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute top-3 left-3 bg-mesa/85 backdrop-blur text-sun text-[0.7rem] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full border border-sun/25">
+                  <span className="absolute top-3 left-3 bg-mesa/85 backdrop-blur text-sun text-[0.7rem] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full border border-adobe/25">
                     {p.service}
                   </span>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="font-display text-[1.4rem] tracking-wide text-bone">{p.title}</h3>
-                  <p className="text-[0.78rem] text-sun/75 font-bold tracking-[0.18em] uppercase mt-1">
+                  <h3 className="font-display text-[1.4rem] tracking-wide text-mesa">{p.title}</h3>
+                  <p className="text-[0.78rem] text-adobe font-bold tracking-[0.18em] uppercase mt-1">
                     {p.city}
                   </p>
-                  <p className="text-bone/70 leading-[1.7] text-[0.92rem] mt-3 flex-1">{p.body}</p>
-                  <dl className="grid grid-cols-2 gap-3 text-[0.78rem] mt-5 pt-4 border-t border-sun/10">
+                  <p className="text-mesa/70 leading-[1.7] text-[0.92rem] mt-3 flex-1">{p.body}</p>
+                  <dl className="grid grid-cols-2 gap-3 text-[0.78rem] mt-5 pt-4 border-t border-adobe/15">
                     <div>
-                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Finish</dt>
-                      <dd className="text-bone font-bold mt-0.5">{p.finish}</dd>
+                      <dt className="text-adobe font-bold tracking-wider uppercase">Finish</dt>
+                      <dd className="text-mesa font-bold mt-0.5">{p.finish}</dd>
                     </div>
                     <div>
-                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Duration</dt>
-                      <dd className="text-bone font-bold mt-0.5">{p.duration}</dd>
+                      <dt className="text-adobe font-bold tracking-wider uppercase">Duration</dt>
+                      <dd className="text-mesa font-bold mt-0.5">{p.duration}</dd>
                     </div>
                     <div className="col-span-2">
-                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Scope</dt>
-                      <dd className="text-bone font-bold mt-0.5">{p.scope}</dd>
+                      <dt className="text-adobe font-bold tracking-wider uppercase">Scope</dt>
+                      <dd className="text-mesa font-bold mt-0.5">{p.scope}</dd>
                     </div>
                   </dl>
                 </div>
@@ -78,11 +78,11 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-20 px-[5vw] bg-mesa">
+      <section className="py-20 px-[5vw] bg-bone">
         <div className="max-w-[1400px] mx-auto">
           <header className="mb-10 text-center">
             <span className="eyebrow">Full Gallery</span>
-            <h2 className="font-display text-[clamp(1.9rem,3.6vw,3rem)] text-bone leading-[0.95] mt-3">
+            <h2 className="font-display text-[clamp(1.9rem,3.6vw,3rem)] text-mesa leading-[0.95] mt-3">
               20+ recent projects.
             </h2>
           </header>
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
                       'linear-gradient(to top, rgba(41,29,20,0.65) 0%, transparent 50%)',
                   }}
                 >
-                  <span className="text-bone text-[0.78rem] font-bold tracking-[0.18em] uppercase">
+                  <span className="text-mesa text-[0.78rem] font-bold tracking-[0.18em] uppercase">
                     {g.label}
                   </span>
                 </div>

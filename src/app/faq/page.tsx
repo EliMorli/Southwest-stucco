@@ -20,7 +20,7 @@ export default function FAQPage() {
         sub="Three decades of stucco work means we've heard almost every question. Here are the ones we hear the most — answered straight."
         crumbs={[{ label: 'FAQ' }]}
       />
-      <section className="bg-mesa-fade py-20 px-[5vw]">
+      <section className="bg-sand-fade py-20 px-[5vw]">
         <div className="max-w-[1000px] mx-auto">
           <FAQAccordion faqs={generalFaqs} />
           <FAQSchema faqs={generalFaqs} />
