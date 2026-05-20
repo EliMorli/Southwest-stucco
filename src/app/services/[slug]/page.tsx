@@ -141,7 +141,7 @@ export default async function ServicePage(props: {
             </div>
 
             <div className="bg-mesa-100/40 border border-sun/10 rounded-2xl p-6">
-              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/70 mb-3">
+              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
                 Other Services
               </h3>
               <ul className="list-none m-0 p-0 flex flex-col gap-1.5">

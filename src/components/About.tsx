@@ -58,7 +58,7 @@ export function About() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    'linear-gradient(180deg, transparent 50%, rgba(31,22,17,0.45) 100%)',
+                    'linear-gradient(180deg, transparent 50%, rgba(41,29,20,0.45) 100%)',
                 }}
               />
             </div>
@@ -96,7 +96,7 @@ export function About() {
                   >
                     {b.icon}
                   </div>
-                  <div className="font-condensed text-[0.65rem] font-bold tracking-[0.22em] uppercase text-sun/70">
+                  <div className="font-condensed text-[0.65rem] font-bold tracking-[0.22em] uppercase text-sun/75">
                     {b.strong}
                   </div>
                   <div className="font-bold text-bone text-[0.92rem] mt-1 leading-tight">
@@ -111,7 +111,7 @@ export function About() {
         {/* Services row — large editorial blocks under the about story */}
         <div className="mt-24">
           <div className="flex items-end justify-between gap-4 mb-8">
-            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/70 font-bold">
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/75 font-bold">
               Our Trades
             </span>
             <div className="thin-rule flex-1 ml-6" aria-hidden />

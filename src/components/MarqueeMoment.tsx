@@ -25,7 +25,7 @@ export function MarqueeMoment({
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, rgba(31,22,17,0.55) 0%, rgba(31,22,17,0.35) 50%, rgba(140,58,30,0.75) 100%)',
+            'linear-gradient(180deg, rgba(41,29,20,0.55) 0%, rgba(41,29,20,0.35) 50%, rgba(140,58,30,0.75) 100%)',
         }}
       />
       <div

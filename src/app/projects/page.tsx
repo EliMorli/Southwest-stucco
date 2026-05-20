@@ -53,21 +53,21 @@ export default function ProjectsPage() {
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="font-display text-[1.4rem] tracking-wide text-bone">{p.title}</h3>
-                  <p className="text-[0.78rem] text-sun/70 font-bold tracking-[0.18em] uppercase mt-1">
+                  <p className="text-[0.78rem] text-sun/75 font-bold tracking-[0.18em] uppercase mt-1">
                     {p.city}
                   </p>
                   <p className="text-bone/70 leading-[1.7] text-[0.92rem] mt-3 flex-1">{p.body}</p>
                   <dl className="grid grid-cols-2 gap-3 text-[0.78rem] mt-5 pt-4 border-t border-sun/10">
                     <div>
-                      <dt className="text-sun/70 font-bold tracking-wider uppercase">Finish</dt>
+                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Finish</dt>
                       <dd className="text-bone font-bold mt-0.5">{p.finish}</dd>
                     </div>
                     <div>
-                      <dt className="text-sun/70 font-bold tracking-wider uppercase">Duration</dt>
+                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Duration</dt>
                       <dd className="text-bone font-bold mt-0.5">{p.duration}</dd>
                     </div>
                     <div className="col-span-2">
-                      <dt className="text-sun/70 font-bold tracking-wider uppercase">Scope</dt>
+                      <dt className="text-sun/75 font-bold tracking-wider uppercase">Scope</dt>
                       <dd className="text-bone font-bold mt-0.5">{p.scope}</dd>
                     </div>
                   </dl>
@@ -101,7 +101,7 @@ export default function ProjectsPage() {
                   className="absolute inset-0 flex items-end p-3"
                   style={{
                     background:
-                      'linear-gradient(to top, rgba(31,22,17,0.65) 0%, transparent 50%)',
+                      'linear-gradient(to top, rgba(41,29,20,0.65) 0%, transparent 50%)',
                   }}
                 >
                   <span className="text-bone text-[0.78rem] font-bold tracking-[0.18em] uppercase">

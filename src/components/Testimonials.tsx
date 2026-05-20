@@ -45,7 +45,7 @@ export function Testimonials({
               <div className="font-serif italic text-[1.6rem] text-bone mt-1">
                 {aggregate.ratingValue.toFixed(1)} / 5
               </div>
-              <div className="font-condensed text-[0.65rem] tracking-[0.32em] uppercase text-sun/70 font-bold">
+              <div className="font-condensed text-[0.65rem] tracking-[0.32em] uppercase text-sun/75 font-bold">
                 {aggregate.reviewCount} reviews
               </div>
             </div>

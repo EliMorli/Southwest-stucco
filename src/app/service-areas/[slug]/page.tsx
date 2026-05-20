@@ -148,20 +148,20 @@ export default async function ServiceAreaPage(props: {
               </a>
               <dl className="mt-6 grid grid-cols-2 gap-3 text-[0.78rem]">
                 <div>
-                  <dt className="text-sun/70 font-bold tracking-wider uppercase">Drive Time</dt>
+                  <dt className="text-sun/75 font-bold tracking-wider uppercase">Drive Time</dt>
                   <dd className="text-bone font-bold mt-0.5">
                     {a.drivingMinutes === 0 ? 'On-site' : `~${a.drivingMinutes} min`}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sun/70 font-bold tracking-wider uppercase">License</dt>
+                  <dt className="text-sun/75 font-bold tracking-wider uppercase">License</dt>
                   <dd className="text-bone font-bold mt-0.5">CSLB #{siteConfig.cslb}</dd>
                 </div>
               </dl>
             </div>
 
             <div className="bg-mesa-100/40 border border-sun/10 rounded-2xl p-6">
-              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/70 mb-3">
+              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
                 Nearby Areas
               </h3>
               <ul className="list-none m-0 p-0 grid grid-cols-2 gap-1.5">

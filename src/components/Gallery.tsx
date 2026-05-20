@@ -35,7 +35,7 @@ export function Gallery({ limit }: { limit?: number }) {
       className="py-32 px-[5vw] relative overflow-hidden"
       style={{
         background:
-          'linear-gradient(180deg, #1F1611 0%, #2A1F18 30%, #382920 100%)',
+          'linear-gradient(180deg, #291D14 0%, #362819 30%, #402E20 100%)',
       }}
     >
       {/* Faint horizon glow */}
@@ -63,7 +63,7 @@ export function Gallery({ limit }: { limit?: number }) {
             </span>
           </h2>
         </div>
-        <span className="hidden md:inline-block font-serif italic text-sun/70 text-[1.05rem]">
+        <span className="hidden md:inline-block font-serif italic text-sun/75 text-[1.05rem]">
           A selection.
         </span>
       </header>
@@ -89,7 +89,7 @@ export function Gallery({ limit }: { limit?: number }) {
               className="absolute inset-0 flex flex-col items-start justify-end p-4"
               style={{
                 background:
-                  'linear-gradient(to top, rgba(31,22,17,0.78) 0%, rgba(31,22,17,0.15) 38%, transparent 60%)',
+                  'linear-gradient(to top, rgba(41,29,20,0.78) 0%, rgba(41,29,20,0.15) 38%, transparent 60%)',
               }}
             >
               <span className="opacity-0 group-hover:opacity-100 transition-opacity text-bone text-[0.78rem] font-bold tracking-[0.18em] uppercase">

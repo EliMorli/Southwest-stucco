@@ -54,7 +54,7 @@ export function BlogTeaser() {
                 <p className="text-bone/60 text-[0.88rem] leading-[1.65] mt-2">
                   {p.description}
                 </p>
-                <p className="text-sun/70 text-[0.75rem] font-bold mt-4 tracking-wide">
+                <p className="text-sun/75 text-[0.75rem] font-bold mt-4 tracking-wide">
                   {p.readingMinutes} min read
                 </p>
               </div>

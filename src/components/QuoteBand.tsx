@@ -24,21 +24,21 @@ export function QuoteBand() {
         className="absolute top-0 inset-x-0 h-[4px]"
         style={{
           background:
-            'linear-gradient(90deg, rgba(31,22,17,0.5) 0%, transparent 50%, rgba(31,22,17,0.5) 100%)',
+            'linear-gradient(90deg, rgba(41,29,20,0.5) 0%, transparent 50%, rgba(41,29,20,0.5) 100%)',
         }}
       />
 
       <span
         aria-hidden
         className="absolute font-display leading-none pointer-events-none top-[-12%] left-1/2 -translate-x-1/2 select-none"
-        style={{ fontSize: '32vw', color: 'rgba(31,22,17,0.10)' }}
+        style={{ fontSize: '32vw', color: 'rgba(41,29,20,0.10)' }}
       >
         &ldquo;
       </span>
       <blockquote className="relative z-[1] max-w-[1100px] mx-auto">
         <p
           className="font-display text-[clamp(2.2rem,4.5vw,4.8rem)] text-bone leading-[0.97] tracking-[0.03em] mb-4"
-          style={{ textShadow: '0 3px 18px rgba(31,22,17,0.35)' }}
+          style={{ textShadow: '0 3px 18px rgba(41,29,20,0.35)' }}
         >
           {quote.before}{' '}
           <span

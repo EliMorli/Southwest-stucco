@@ -205,13 +205,13 @@ export default function GeneralContractorsPage() {
                   <p className="font-serif italic text-clay text-[1rem] mb-3">{p.system}</p>
                   <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-[0.88rem]">
                     <div>
-                      <dt className="text-sun/70 font-bold tracking-wide uppercase text-[0.66rem]">
+                      <dt className="text-sun/75 font-bold tracking-wide uppercase text-[0.66rem]">
                         Scope
                       </dt>
                       <dd className="m-0 text-bone/85 leading-snug">{p.scope}</dd>
                     </div>
                     <div>
-                      <dt className="text-sun/70 font-bold tracking-wide uppercase text-[0.66rem]">
+                      <dt className="text-sun/75 font-bold tracking-wide uppercase text-[0.66rem]">
                         Duration
                       </dt>
                       <dd className="m-0 text-bone/85 leading-snug">{p.duration}</dd>
@@ -290,13 +290,13 @@ export default function GeneralContractorsPage() {
                   />
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
-                  <span className="font-condensed text-[0.62rem] tracking-[0.28em] uppercase text-sun/70 font-bold">
+                  <span className="font-condensed text-[0.62rem] tracking-[0.28em] uppercase text-sun/75 font-bold">
                     {p.category}
                   </span>
                   <h3 className="font-bold text-bone text-[0.98rem] leading-snug mt-2 group-hover:text-clay transition-colors flex-1">
                     {p.title}
                   </h3>
-                  <span className="text-sun/70 text-[0.72rem] font-bold mt-3 tracking-wide">
+                  <span className="text-sun/75 text-[0.72rem] font-bold mt-3 tracking-wide">
                     {p.readingMinutes} min read
                   </span>
                 </div>
