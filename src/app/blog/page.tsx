@@ -47,7 +47,7 @@ export default function BlogIndex() {
                   {p.title}
                 </h2>
                 <p className="text-bone/60 text-[0.9rem] leading-[1.7] mt-2 flex-1">{p.description}</p>
-                <p className="text-sun/70 text-[0.75rem] font-bold mt-4 tracking-wide">
+                <p className="text-sun/75 text-[0.75rem] font-bold mt-4 tracking-wide">
                   {new Date(p.publishedAt).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',

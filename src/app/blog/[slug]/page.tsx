@@ -56,7 +56,7 @@ export default async function BlogPostPage(props: {
 
       <section className="bg-mesa-fade py-16 px-[5vw]">
         <article className="max-w-[760px] mx-auto">
-          <p className="text-sun/70 text-[0.78rem] font-bold tracking-[0.2em] uppercase mb-6">
+          <p className="text-sun/75 text-[0.78rem] font-bold tracking-[0.2em] uppercase mb-6">
             {new Date(p.publishedAt).toLocaleDateString('en-US', {
               month: 'long',
               day: 'numeric',
@@ -86,7 +86,7 @@ export default async function BlogPostPage(props: {
               SS
             </div>
             <div>
-              <p className="font-condensed text-[0.66rem] tracking-[0.32em] uppercase text-sun/70 font-bold m-0 mb-1">
+              <p className="font-condensed text-[0.66rem] tracking-[0.32em] uppercase text-sun/75 font-bold m-0 mb-1">
                 Written by
               </p>
               <p className="font-display text-[1.25rem] tracking-wide text-bone m-0">
@@ -131,7 +131,7 @@ export default async function BlogPostPage(props: {
                   <h3 className="font-bold text-bone text-[1rem] leading-snug group-hover:text-clay transition-colors">
                     {o.title}
                   </h3>
-                  <p className="text-sun/70 text-[0.72rem] font-bold mt-3 tracking-wide">
+                  <p className="text-sun/75 text-[0.72rem] font-bold mt-3 tracking-wide">
                     {o.readingMinutes} min read
                   </p>
                 </div>

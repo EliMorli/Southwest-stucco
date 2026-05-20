@@ -45,7 +45,7 @@ export function CtaStrip({
         <div className="flex flex-col gap-3 items-stretch md:items-end">
           <Link
             href="/contact"
-            className="bg-bone text-adobe font-extrabold px-8 py-4 rounded-full no-underline tracking-[0.04em] text-center shadow-[0_12px_30px_rgba(31,22,17,0.32)] hover:-translate-y-0.5 transition-transform"
+            className="bg-bone text-adobe font-extrabold px-8 py-4 rounded-full no-underline tracking-[0.04em] text-center shadow-[0_12px_30px_rgba(41,29,20,0.32)] hover:-translate-y-0.5 transition-transform"
           >
             Get a Free Estimate
           </Link>

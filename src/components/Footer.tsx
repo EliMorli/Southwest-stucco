@@ -21,7 +21,7 @@ export function Footer() {
               <div className="font-display text-[1.25rem] tracking-[0.1em] text-bone">
                 Southwest <em className="not-italic text-clay">Stucco</em> Inc.
               </div>
-              <div className="text-[0.74rem] text-sun/70 italic mt-0.5">{footerCopy.tagline}</div>
+              <div className="text-[0.74rem] text-sun/75 italic mt-0.5">{footerCopy.tagline}</div>
             </div>
           </div>
           <p className="text-[0.86rem] text-bone/55 leading-[1.65] mb-4">
@@ -35,7 +35,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/70 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 📸
               </a>
@@ -46,7 +46,7 @@ export function Footer() {
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/70 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 👍
               </a>
@@ -56,7 +56,7 @@ export function Footer() {
 
         {/* Services */}
         <nav aria-label="Services">
-          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/70 mb-3">
+          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
             Services
           </h3>
           <ul className="list-none m-0 p-0 flex flex-col gap-1.5">
@@ -75,7 +75,7 @@ export function Footer() {
 
         {/* Service areas */}
         <nav aria-label="Service Areas">
-          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/70 mb-3">
+          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
             Service Areas
           </h3>
           <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-3 gap-y-1.5">
@@ -99,7 +99,7 @@ export function Footer() {
 
         {/* Contact */}
         <address className="not-italic flex flex-col gap-1.5">
-          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/70 mb-3">
+          <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
             Contact
           </h3>
           <a

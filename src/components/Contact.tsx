@@ -96,7 +96,7 @@ export function Contact() {
                 {i.icon}
               </span>
               <div>
-                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-sun/70 mb-1">
+                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-sun/75 mb-1">
                   {i.label}
                 </dt>
                 <dd className="m-0 text-base text-bone font-semibold leading-[1.5] whitespace-pre-line">
@@ -246,7 +246,7 @@ function Field({
     <div className="mb-3 [&_input]:w-full [&_select]:w-full [&_textarea]:w-full [&_input]:bg-mesa/60 [&_select]:bg-mesa/60 [&_textarea]:bg-mesa/60 [&_input]:border [&_select]:border [&_textarea]:border [&_input]:border-sun/15 [&_select]:border-sun/15 [&_textarea]:border-sun/15 [&_input]:rounded-lg [&_select]:rounded-lg [&_textarea]:rounded-lg [&_input]:text-bone [&_select]:text-bone [&_textarea]:text-bone [&_input]:px-4 [&_select]:px-4 [&_textarea]:px-4 [&_input]:py-3 [&_select]:py-3 [&_textarea]:py-3 [&_input]:outline-none [&_select]:outline-none [&_textarea]:outline-none [&_input:focus]:border-clay [&_select:focus]:border-clay [&_textarea:focus]:border-clay [&_textarea]:min-h-[100px] [&_textarea]:resize-y [&_input::placeholder]:text-bone/55 [&_textarea::placeholder]:text-bone/55 [&_input]:transition-colors [&_select]:transition-colors [&_textarea]:transition-colors">
       <label
         htmlFor={id}
-        className="block text-[0.72rem] font-bold text-sun/70 mb-1.5 tracking-[0.12em] uppercase"
+        className="block text-[0.72rem] font-bold text-sun/75 mb-1.5 tracking-[0.12em] uppercase"
       >
         {label}
       </label>

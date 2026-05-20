@@ -36,7 +36,7 @@ export default function ServiceAreasPage() {
                     <h2 className="font-display text-[1.5rem] tracking-wide text-bone group-hover:text-clay transition-colors">
                       {a.city}
                     </h2>
-                    <p className="text-[0.78rem] text-sun/70 font-bold tracking-[0.18em] uppercase mt-0.5">
+                    <p className="text-[0.78rem] text-sun/75 font-bold tracking-[0.18em] uppercase mt-0.5">
                       {a.county} · {a.zips.join(' / ')}
                     </p>
                   </div>

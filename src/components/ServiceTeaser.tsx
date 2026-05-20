@@ -60,7 +60,7 @@ export function ServiceTeaser() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    'linear-gradient(180deg, rgba(31,22,17,0.15) 0%, rgba(31,22,17,0.55) 60%, rgba(31,22,17,0.92) 100%)',
+                    'linear-gradient(180deg, rgba(41,29,20,0.15) 0%, rgba(41,29,20,0.55) 60%, rgba(41,29,20,0.92) 100%)',
                 }}
               />
               <div className="absolute inset-0 p-7 flex flex-col justify-between">
@@ -68,7 +68,7 @@ export function ServiceTeaser() {
                   <span className="font-serif italic text-clay text-[1.4rem] leading-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <span className="font-condensed text-[0.6rem] tracking-[0.32em] uppercase text-sun/70 font-bold">
+                  <span className="font-condensed text-[0.6rem] tracking-[0.32em] uppercase text-sun/75 font-bold">
                     Trade
                   </span>
                 </div>

@@ -23,7 +23,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, rgba(31,22,17,0.85) 0%, rgba(31,22,17,0.55) 35%, rgba(140,58,30,0.55) 70%, rgba(31,22,17,0.92) 100%)',
+              'linear-gradient(180deg, rgba(41,29,20,0.85) 0%, rgba(41,29,20,0.55) 35%, rgba(140,58,30,0.55) 70%, rgba(41,29,20,0.92) 100%)',
           }}
         />
         {/* Right-side sun glow */}

@@ -13,10 +13,10 @@ const config: Config = {
         },
         // Deep warm earth tones (replaces "ink" black)
         ink: {
-          DEFAULT: '#1F1611',
-          50: '#2A1F18',
-          100: '#382920',
-          200: '#4A372B',
+          DEFAULT: '#291D14',
+          50: '#362819',
+          100: '#402E20',
+          200: '#533C28',
         },
         // Warm backgrounds
         warm: '#FAF3E7',
@@ -33,7 +33,7 @@ const config: Config = {
         terracotta: '#C2562B',
         clay: '#E07B4A',
         sun: '#D4A574',
-        mesa: '#1F1611',
+        mesa: '#291D14',
       },
       fontFamily: {
         display: ['var(--font-bebas)', 'sans-serif'],
@@ -43,11 +43,11 @@ const config: Config = {
       },
       backgroundImage: {
         'desert-dusk':
-          'linear-gradient(180deg, #1F1611 0%, #382920 38%, #6B3923 72%, #C2562B 100%)',
+          'linear-gradient(180deg, #291D14 0%, #402E20 38%, #6B3923 72%, #C2562B 100%)',
         'desert-sun':
           'radial-gradient(circle at 78% 30%, rgba(212,165,116,0.35) 0%, rgba(194,86,43,0.18) 28%, transparent 60%)',
         'mesa-fade':
-          'linear-gradient(180deg, #1F1611 0%, #2A1F18 100%)',
+          'linear-gradient(180deg, #291D14 0%, #362819 100%)',
         'sand-fade':
           'linear-gradient(180deg, #FAF3E7 0%, #F1E4CF 100%)',
       },
