@@ -30,6 +30,7 @@ const barlow = Barlow_Condensed({
   subsets: ['latin'],
   variable: '--font-barlow',
   display: 'swap',
+  preload: false,
 });
 
 const cormorant = Cormorant_Garamond({
@@ -38,6 +39,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   variable: '--font-cormorant',
   display: 'swap',
+  preload: false,
 });
 
 export const viewport: Viewport = {
