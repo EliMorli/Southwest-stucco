@@ -22,30 +22,30 @@ export default function ServiceAreasPage() {
         crumbs={[{ label: 'Service Areas' }]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1300px] mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {serviceAreas.map((a) => (
               <Link
                 key={a.slug}
                 href={`/service-areas/${a.slug}`}
-                className="group bg-mesa-100/60 border border-sun/12 rounded-2xl p-6 no-underline transition-all hover:border-clay/40 hover:-translate-y-1"
+                className="group bg-bone border border-adobe/15 rounded-2xl p-6 no-underline transition-all hover:border-terracotta/40 hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h2 className="font-display text-[1.5rem] tracking-wide text-bone group-hover:text-clay transition-colors">
+                    <h2 className="font-display text-[1.5rem] tracking-wide text-mesa group-hover:text-terracotta transition-colors">
                       {a.city}
                     </h2>
-                    <p className="text-[0.78rem] text-sun/75 font-bold tracking-[0.18em] uppercase mt-0.5">
+                    <p className="text-[0.78rem] text-adobe font-bold tracking-[0.18em] uppercase mt-0.5">
                       {a.county} · {a.zips.join(' / ')}
                     </p>
                   </div>
-                  <span className="text-[0.72rem] text-bone/50 font-bold tracking-wide whitespace-nowrap mt-1">
+                  <span className="text-[0.72rem] text-mesa/50 font-bold tracking-wide whitespace-nowrap mt-1">
                     {a.drivingMinutes === 0 ? 'HQ' : `${a.drivingMinutes} min`}
                   </span>
                 </div>
-                <p className="text-bone/65 text-[0.9rem] leading-[1.7] mt-3">{a.blurb}</p>
-                <span className="text-clay text-sm font-bold mt-4 inline-block">
+                <p className="text-mesa/65 text-[0.9rem] leading-[1.7] mt-3">{a.blurb}</p>
+                <span className="text-terracotta text-sm font-bold mt-4 inline-block">
                   Learn more →
                 </span>
               </Link>

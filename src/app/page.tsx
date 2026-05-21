@@ -40,20 +40,25 @@ export default function HomePage() {
       <Gallery limit={8} />
       <Testimonials variant="home" limit={6} />
       <BlogTeaser />
-      <section className="bg-mesa py-28 px-[5vw]">
+      <section className="bg-sand-fade py-28 px-[5vw]">
         <div className="max-w-[1100px] mx-auto">
           <header className="grid md:grid-cols-[auto_1fr] items-end gap-x-6 mb-12">
-            <div className="section-num">07</div>
+            <div className="section-num text-adobe">07</div>
             <div>
-              <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/80 font-bold block mb-2">
+              <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold block mb-2">
                 Common Questions
               </span>
-              <div className="thin-rule max-w-[260px]" aria-hidden />
+              <div className="thin-rule-dark max-w-[260px]" aria-hidden />
               <h2 className="mt-4">
-                <span className="block font-display text-[clamp(2.2rem,4.5vw,4.4rem)] leading-[0.95] text-bone">
+                <span className="block font-display text-[clamp(2.2rem,4.5vw,4.4rem)] leading-[0.95] text-mesa">
                   Answers before you
                 </span>
-                <span className="block font-serif italic text-[clamp(2.2rem,4.7vw,4.6rem)] leading-[0.95] -mt-1 text-sun">
+                <span
+                  className="block font-serif italic text-[clamp(2.2rem,4.7vw,4.6rem)] leading-[0.95] -mt-1 bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #C2562B 0%, #8C3A1E 100%)',
+                  }}
+                >
                   even ask.
                 </span>
               </h2>
@@ -62,7 +67,7 @@ export default function HomePage() {
           <FAQAccordion faqs={homeFaqs} />
           <FAQSchema faqs={homeFaqs} />
           <p className="text-center mt-10">
-            <a href="/faq" className="btn-outline">See all FAQs</a>
+            <a href="/faq" className="btn-outline-dark">See all FAQs</a>
           </p>
         </div>
       </section>

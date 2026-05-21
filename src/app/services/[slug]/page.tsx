@@ -52,41 +52,41 @@ export default async function ServicePage(props: {
         ]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-start">
           <div>
-            <p className="text-bone/80 leading-[1.85] text-[1.05rem] mb-8">{s.intro}</p>
+            <p className="text-mesa/80 leading-[1.85] text-[1.05rem] mb-8">{s.intro}</p>
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-4">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-4">
               What's Included
             </h2>
             <ul className="grid sm:grid-cols-2 gap-2 mb-12 list-none p-0 m-0">
               {s.bullets.map((b) => (
                 <li
                   key={b}
-                  className="flex items-start gap-2 text-bone/75 text-[0.94rem] leading-[1.6]"
+                  className="flex items-start gap-2 text-mesa/75 text-[0.94rem] leading-[1.6]"
                 >
-                  <span aria-hidden className="text-clay text-lg leading-none mt-0.5">✦</span>
+                  <span aria-hidden className="text-terracotta text-lg leading-none mt-0.5">✦</span>
                   <span>{b}</span>
                 </li>
               ))}
             </ul>
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-6">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-6">
               How It Works
             </h2>
             <ol className="space-y-4 list-none p-0 m-0 mb-12">
               {s.process.map((p, i) => (
                 <li
                   key={p.title}
-                  className="flex gap-4 bg-mesa-100/50 border border-sun/10 rounded-xl p-5"
+                  className="flex gap-4 bg-bone border border-adobe/15 rounded-xl p-5"
                 >
-                  <span className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-b from-clay to-terracotta text-bone font-extrabold flex items-center justify-center text-sm shadow-[0_4px_12px_rgba(194,86,43,0.4)]">
+                  <span className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-b from-clay to-terracotta text-mesa font-extrabold flex items-center justify-center text-sm shadow-[0_4px_12px_rgba(194,86,43,0.4)]">
                     {i + 1}
                   </span>
                   <div>
-                    <h3 className="font-bold text-bone text-[1.02rem] mb-1">{p.title}</h3>
-                    <p className="text-bone/65 text-[0.92rem] leading-[1.65] m-0">{p.desc}</p>
+                    <h3 className="font-bold text-mesa text-[1.02rem] mb-1">{p.title}</h3>
+                    <p className="text-mesa/65 text-[0.92rem] leading-[1.65] m-0">{p.desc}</p>
                   </div>
                 </li>
               ))}
@@ -94,24 +94,24 @@ export default async function ServicePage(props: {
 
             {s.finishes && (
               <>
-                <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-6">
+                <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-6">
                   Finishes Available
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4 mb-12">
                   {s.finishes.map((f) => (
                     <div
                       key={f.name}
-                      className="bg-mesa-100/50 border border-sun/10 rounded-xl p-5"
+                      className="bg-bone border border-adobe/15 rounded-xl p-5"
                     >
-                      <h3 className="font-bold text-bone mb-1">{f.name}</h3>
-                      <p className="text-bone/65 text-[0.9rem] leading-[1.65] m-0">{f.desc}</p>
+                      <h3 className="font-bold text-mesa mb-1">{f.name}</h3>
+                      <p className="text-mesa/65 text-[0.9rem] leading-[1.65] m-0">{f.desc}</p>
                     </div>
                   ))}
                 </div>
               </>
             )}
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-6">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-6">
               Common Questions
             </h2>
             <FAQAccordion faqs={s.faqs} />
@@ -119,29 +119,29 @@ export default async function ServicePage(props: {
           </div>
 
           <aside className="md:sticky md:top-24 space-y-5">
-            <div className="bg-mesa-100/70 border border-sun/15 rounded-2xl p-6 shadow-[0_18px_44px_-16px_rgba(0,0,0,0.5)]">
-              <h3 className="font-display text-[1.5rem] tracking-wide text-bone mb-1">
+            <div className="bg-bone border border-adobe/15 rounded-2xl p-6 shadow-[0_18px_44px_-16px_rgba(0,0,0,0.5)]">
+              <h3 className="font-display text-[1.5rem] tracking-wide text-mesa mb-1">
                 Get a free estimate
               </h3>
-              <p className="text-bone/65 text-sm mb-5">
+              <p className="text-mesa/65 text-sm mb-5">
                 Free, fast, no pressure. We respond inside 24 hours.
               </p>
               <Link
                 href="/contact"
-                className="block text-center bg-gradient-to-b from-clay to-terracotta text-bone font-extrabold py-3 rounded-full no-underline shadow-[0_4px_14px_rgba(194,86,43,0.4)]"
+                className="block text-center bg-gradient-to-b from-clay to-terracotta text-mesa font-extrabold py-3 rounded-full no-underline shadow-[0_4px_14px_rgba(194,86,43,0.4)]"
               >
                 Request Estimate
               </Link>
               <a
                 href={`tel:${siteConfig.phoneE164}`}
-                className="block text-center mt-3 border border-sun/30 text-bone font-bold py-3 rounded-full no-underline hover:border-sun"
+                className="block text-center mt-3 border border-adobe/25 text-mesa font-bold py-3 rounded-full no-underline hover:border-sun"
               >
                 📞 {siteConfig.phone}
               </a>
             </div>
 
-            <div className="bg-mesa-100/40 border border-sun/10 rounded-2xl p-6">
-              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
+            <div className="bg-bone border border-adobe/15 rounded-2xl p-6">
+              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-adobe mb-3">
                 Other Services
               </h3>
               <ul className="list-none m-0 p-0 flex flex-col gap-1.5">
@@ -149,7 +149,7 @@ export default async function ServicePage(props: {
                   <li key={o.slug}>
                     <Link
                       href={`/services/${o.slug}`}
-                      className="text-bone/70 hover:text-clay no-underline text-[0.92rem] font-semibold"
+                      className="text-mesa/70 hover:text-terracotta no-underline text-[0.92rem] font-semibold"
                     >
                       {o.name} →
                     </Link>

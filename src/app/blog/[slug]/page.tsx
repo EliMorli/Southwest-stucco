@@ -54,9 +54,9 @@ export default async function BlogPostPage(props: {
         ]}
       />
 
-      <section className="bg-mesa-fade py-16 px-[5vw]">
+      <section className="bg-sand-fade py-16 px-[5vw]">
         <article className="max-w-[760px] mx-auto">
-          <p className="text-sun/75 text-[0.78rem] font-bold tracking-[0.2em] uppercase mb-6">
+          <p className="text-adobe text-[0.78rem] font-bold tracking-[0.2em] uppercase mb-6">
             {new Date(p.publishedAt).toLocaleDateString('en-US', {
               month: 'long',
               day: 'numeric',
@@ -65,7 +65,7 @@ export default async function BlogPostPage(props: {
             {' · '}
             {p.readingMinutes} min read
           </p>
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 border border-sun/15">
+          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 border border-adobe/15">
             <Image
               src={p.cover}
               alt={p.title}
@@ -76,26 +76,26 @@ export default async function BlogPostPage(props: {
             />
           </div>
           <div
-            className="prose-sws text-bone/85 leading-[1.85] [&_h2]:font-display [&_h2]:text-bone [&_h2]:text-[1.7rem] [&_h2]:tracking-wide [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-bone [&_h3]:font-bold [&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_li]:mb-2 [&_strong]:text-bone [&_a]:text-clay [&_a]:underline [&_a:hover]:text-sun [&_table]:w-full [&_table]:my-6 [&_table]:text-left [&_th]:font-bold [&_th]:text-bone [&_th]:py-2 [&_th]:px-3 [&_th]:border-b [&_th]:border-sun/20 [&_td]:py-2 [&_td]:px-3 [&_td]:border-b [&_td]:border-sun/10"
+            className="prose-sws text-mesa/85 leading-[1.85] [&_h2]:font-display [&_h2]:text-mesa [&_h2]:text-[1.7rem] [&_h2]:tracking-wide [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-mesa [&_h3]:font-bold [&_h3]:text-lg [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-5 [&_li]:mb-2 [&_strong]:text-mesa [&_a]:text-terracotta [&_a]:underline [&_a:hover]:text-terracotta [&_table]:w-full [&_table]:my-6 [&_table]:text-left [&_th]:font-bold [&_th]:text-mesa [&_th]:py-2 [&_th]:px-3 [&_th]:border-b [&_th]:border-adobe/25 [&_td]:py-2 [&_td]:px-3 [&_td]:border-b [&_td]:border-adobe/15"
             dangerouslySetInnerHTML={{ __html: p.body }}
           />
 
           {/* Author byline / E-E-A-T card */}
-          <aside className="mt-14 pt-8 border-t border-sun/15 flex gap-5 items-start">
-            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-sun/40 to-terracotta/30 border border-sun/30 flex items-center justify-center text-clay text-xl font-serif italic">
+          <aside className="mt-14 pt-8 border-t border-adobe/15 flex gap-5 items-start">
+            <div className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-sun/40 to-terracotta/30 border border-adobe/25 flex items-center justify-center text-terracotta text-xl font-serif italic">
               SS
             </div>
             <div>
-              <p className="font-condensed text-[0.66rem] tracking-[0.32em] uppercase text-sun/75 font-bold m-0 mb-1">
+              <p className="font-condensed text-[0.66rem] tracking-[0.32em] uppercase text-adobe font-bold m-0 mb-1">
                 Written by
               </p>
-              <p className="font-display text-[1.25rem] tracking-wide text-bone m-0">
+              <p className="font-display text-[1.25rem] tracking-wide text-mesa m-0">
                 {primaryAuthor.name}
               </p>
-              <p className="font-serif italic text-clay text-[0.95rem] mt-0.5">
+              <p className="font-serif italic text-terracotta text-[0.95rem] mt-0.5">
                 {primaryAuthor.role}
               </p>
-              <p className="text-bone/65 text-[0.92rem] leading-[1.7] mt-3 max-w-[640px]">
+              <p className="text-mesa/65 text-[0.92rem] leading-[1.7] mt-3 max-w-[640px]">
                 {primaryAuthor.bio}
               </p>
             </div>
@@ -103,11 +103,11 @@ export default async function BlogPostPage(props: {
         </article>
       </section>
 
-      <section className="bg-mesa py-20 px-[5vw]">
+      <section className="bg-bone py-20 px-[5vw]">
         <div className="max-w-[1200px] mx-auto">
           <header className="mb-10 text-center">
             <span className="eyebrow">Keep Reading</span>
-            <h2 className="font-display text-[clamp(1.8rem,3vw,2.4rem)] text-bone leading-[0.95] mt-3">
+            <h2 className="font-display text-[clamp(1.8rem,3vw,2.4rem)] text-mesa leading-[0.95] mt-3">
               More from the blog.
             </h2>
           </header>
@@ -116,7 +116,7 @@ export default async function BlogPostPage(props: {
               <Link
                 key={o.slug}
                 href={`/blog/${o.slug}`}
-                className="group bg-mesa-100/60 border border-sun/12 rounded-2xl overflow-hidden no-underline transition-all hover:border-clay/40 hover:-translate-y-1"
+                className="group bg-bone border border-adobe/15 rounded-2xl overflow-hidden no-underline transition-all hover:border-terracotta/40 hover:-translate-y-1"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -128,10 +128,10 @@ export default async function BlogPostPage(props: {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-bold text-bone text-[1rem] leading-snug group-hover:text-clay transition-colors">
+                  <h3 className="font-bold text-mesa text-[1rem] leading-snug group-hover:text-terracotta transition-colors">
                     {o.title}
                   </h3>
-                  <p className="text-sun/75 text-[0.72rem] font-bold mt-3 tracking-wide">
+                  <p className="text-adobe text-[0.72rem] font-bold mt-3 tracking-wide">
                     {o.readingMinutes} min read
                   </p>
                 </div>

@@ -3,7 +3,13 @@ import { siteConfig } from '@/lib/site-config';
 
 export type Crumb = { label: string; href?: string };
 
-export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
+export function Breadcrumbs({
+  trail,
+  variant = 'dark',
+}: {
+  trail: Crumb[];
+  variant?: 'dark' | 'light';
+}) {
   const items = [{ label: 'Home', href: '/' }, ...trail];
   const ld = {
     '@context': 'https://schema.org',
@@ -16,10 +22,16 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
     })),
   };
 
+  const isLight = variant === 'light';
+  const trail_cls = isLight ? 'text-mesa/65' : 'text-bone/55';
+  const current_cls = isLight ? 'text-mesa' : 'text-bone/85';
+  const sep_cls = isLight ? 'text-adobe/60' : 'text-sun/75';
+  const hover_cls = isLight ? 'hover:text-terracotta' : 'hover:text-clay';
+
   return (
     <nav
       aria-label="Breadcrumb"
-      className="text-[0.78rem] tracking-wide text-bone/55 mb-6"
+      className={`text-[0.78rem] tracking-wide mb-6 ${trail_cls}`}
     >
       <ol className="flex flex-wrap items-center gap-1.5">
         {items.map((c, i) => {
@@ -27,15 +39,15 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
           return (
             <li key={`${c.label}-${i}`} className="flex items-center gap-1.5">
               {c.href && !last ? (
-                <Link href={c.href} className="hover:text-clay no-underline">
+                <Link href={c.href} className={`no-underline ${hover_cls}`}>
                   {c.label}
                 </Link>
               ) : (
-                <span aria-current={last ? 'page' : undefined} className="text-bone/85">
+                <span aria-current={last ? 'page' : undefined} className={current_cls}>
                   {c.label}
                 </span>
               )}
-              {!last && <span aria-hidden className="text-sun/75">/</span>}
+              {!last && <span aria-hidden className={sep_cls}>/</span>}
             </li>
           );
         })}

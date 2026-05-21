@@ -32,11 +32,7 @@ export function Gallery({ limit }: { limit?: number }) {
   return (
     <section
       id="gallery"
-      className="py-32 px-[5vw] relative overflow-hidden"
-      style={{
-        background:
-          'linear-gradient(180deg, #291D14 0%, #362819 30%, #402E20 100%)',
-      }}
+      className="py-32 px-[5vw] relative overflow-hidden bg-sand-fade"
     >
       {/* Faint horizon glow */}
       <div
@@ -44,26 +40,31 @@ export function Gallery({ limit }: { limit?: number }) {
         className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[80vw] h-[40vw] pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(212,165,116,0.10) 0%, transparent 60%)',
+            'radial-gradient(ellipse at center, rgba(194,86,43,0.10) 0%, transparent 60%)',
         }}
       />
       <header className="grid md:grid-cols-[auto_1fr_auto] items-end gap-x-6 mb-14 max-w-[1400px] mx-auto relative">
-        <div className="section-num">06</div>
+        <div className="section-num text-adobe">06</div>
         <div>
-          <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun/80 font-bold block mb-2">
+          <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold block mb-2">
             {gallery.eyebrow}
           </span>
-          <div className="thin-rule max-w-[260px]" aria-hidden />
+          <div className="thin-rule-dark max-w-[260px]" aria-hidden />
           <h2 className="mt-4">
-            <span className="block font-display text-[clamp(2.4rem,5.2vw,5.2rem)] leading-[0.92] text-bone">
+            <span className="block font-display text-[clamp(2.4rem,5.2vw,5.2rem)] leading-[0.92] text-mesa">
               Real projects.
             </span>
-            <span className="block font-serif italic text-[clamp(2.4rem,5.4vw,5.4rem)] leading-[0.92] -mt-1 text-sun">
+            <span
+              className="block font-serif italic text-[clamp(2.4rem,5.4vw,5.4rem)] leading-[0.92] -mt-1 bg-clip-text text-transparent"
+              style={{
+                backgroundImage: 'linear-gradient(90deg, #C2562B 0%, #8C3A1E 100%)',
+              }}
+            >
               real results.
             </span>
           </h2>
         </div>
-        <span className="hidden md:inline-block font-serif italic text-sun/75 text-[1.05rem]">
+        <span className="hidden md:inline-block font-serif italic text-adobe text-[1.05rem]">
           A selection.
         </span>
       </header>
@@ -74,7 +75,7 @@ export function Gallery({ limit }: { limit?: number }) {
             key={item.src}
             type="button"
             onClick={() => setOpenIdx(idx)}
-            className="group relative cursor-pointer overflow-hidden aspect-[3/4] rounded-lg focus:outline-none focus:ring-2 focus:ring-clay ring-1 ring-sun/10"
+            className="group relative cursor-pointer overflow-hidden aspect-[3/4] rounded-lg focus:outline-none focus:ring-2 focus:ring-terracotta ring-1 ring-adobe/20"
             aria-label={`Open larger image of ${item.label}`}
           >
             <Image
@@ -108,7 +109,7 @@ export function Gallery({ limit }: { limit?: number }) {
 
       {limit && gallery.items.length > limit && (
         <div className="text-center mt-10">
-          <a href="/projects" className="btn-outline">
+          <a href="/projects" className="btn-outline-dark">
             View all {gallery.items.length} projects
           </a>
         </div>

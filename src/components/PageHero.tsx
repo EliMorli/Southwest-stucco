@@ -13,48 +13,51 @@ export function PageHero({
   sub?: string;
   crumbs: Crumb[];
 }) {
-  // If italicTitle isn't provided, try to split the title on a period/em-dash for nice rhythm
-  const display = italicTitle ? { lead: title, accent: italicTitle } : { lead: title, accent: '' };
-
   return (
-    <section className="relative bg-mesa pt-36 pb-20 px-[5vw] overflow-hidden">
+    <section className="relative bg-sand-fade pt-36 pb-20 px-[5vw] overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at 80% 20%, rgba(212,165,116,0.16) 0%, transparent 55%), linear-gradient(180deg, #291D14 0%, #362819 100%)',
+            'radial-gradient(ellipse at 80% 20%, rgba(194,86,43,0.10) 0%, transparent 55%)',
         }}
       />
       <div
         aria-hidden
-        className="absolute -bottom-[10%] -left-[5%] font-serif italic text-[18vw] leading-none text-bone/[0.025] pointer-events-none select-none"
+        className="absolute -bottom-[10%] -left-[5%] font-serif italic text-[18vw] leading-none text-adobe/[0.035] pointer-events-none select-none"
       >
         sws
       </div>
 
       <div className="relative z-[1] max-w-[1300px] mx-auto animate-rise-in">
-        <Breadcrumbs trail={crumbs} />
+        <Breadcrumbs trail={crumbs} variant="light" />
         {eyebrow && (
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-12 h-px bg-gradient-to-r from-clay to-sun" aria-hidden />
-            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-sun font-bold">
+            <span className="w-12 h-px bg-gradient-to-r from-terracotta to-adobe" aria-hidden />
+            <span className="font-condensed text-[0.7rem] tracking-[0.42em] uppercase text-adobe font-bold">
               {eyebrow}
             </span>
           </div>
         )}
-        <h1 className="text-bone max-w-[1000px]">
+        <h1 className="text-mesa max-w-[1000px]">
           <span className="block font-display text-[clamp(2.2rem,5vw,4.8rem)] leading-[0.95] tracking-[0.005em]">
-            {display.lead}
+            {title}
           </span>
-          {display.accent && (
-            <span className="block font-serif italic text-[clamp(2.2rem,5.2vw,5rem)] leading-[0.95] tracking-[-0.01em] text-sun -mt-1">
-              {display.accent}
+          {italicTitle && (
+            <span
+              className="block font-serif italic text-[clamp(2.2rem,5.2vw,5rem)] leading-[0.95] tracking-[-0.01em] -mt-1 bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  'linear-gradient(90deg, #C2562B 0%, #8C3A1E 100%)',
+              }}
+            >
+              {italicTitle}
             </span>
           )}
         </h1>
         {sub && (
-          <p className="font-serif italic text-[1.2rem] text-bone/75 leading-[1.55] max-w-[680px] mt-6">
+          <p className="font-serif italic text-[1.2rem] text-mesa/75 leading-[1.55] max-w-[680px] mt-6">
             {sub}
           </p>
         )}

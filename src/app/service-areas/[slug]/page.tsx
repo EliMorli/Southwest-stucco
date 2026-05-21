@@ -74,33 +74,33 @@ export default async function ServiceAreaPage(props: {
         ]}
       />
 
-      <section className="py-20 px-[5vw] bg-mesa-fade">
+      <section className="py-20 px-[5vw] bg-sand-fade">
         <div className="max-w-[1100px] mx-auto grid md:grid-cols-[1.2fr_0.8fr] gap-14 items-start">
           <div>
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-4">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-4">
               Why {a.city} homeowners and builders call us
             </h2>
             <ul className="space-y-2 mb-10 list-none p-0 m-0">
               {a.highlights.map((h) => (
                 <li
                   key={h}
-                  className="flex items-start gap-2 text-bone/75 text-[0.96rem] leading-[1.7]"
+                  className="flex items-start gap-2 text-mesa/75 text-[0.96rem] leading-[1.7]"
                 >
-                  <span aria-hidden className="text-clay text-lg leading-none mt-0.5">✦</span>
+                  <span aria-hidden className="text-terracotta text-lg leading-none mt-0.5">✦</span>
                   <span>{h}</span>
                 </li>
               ))}
             </ul>
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-4">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-4">
               Neighborhoods we serve in {a.city}
             </h2>
-            <p className="text-bone/70 leading-[1.8] mb-10">
+            <p className="text-mesa/70 leading-[1.8] mb-10">
               We regularly work across {a.neighborhoods.join(', ')}, plus every other corner of{' '}
               {a.city}. ZIP codes {a.zips.join(', ')}.
             </p>
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-6">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-6">
               Services available in {a.city}
             </h2>
             <div className="grid sm:grid-cols-2 gap-4 mb-12">
@@ -108,18 +108,18 @@ export default async function ServiceAreaPage(props: {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="bg-mesa-100/50 border border-sun/10 rounded-xl p-5 no-underline hover:border-clay/40 hover:bg-terracotta/[0.08] transition-all"
+                  className="bg-bone border border-adobe/15 rounded-xl p-5 no-underline hover:border-terracotta/40 hover:bg-terracotta/[0.08] transition-all"
                 >
                   <div className="flex items-center gap-2.5 mb-1">
                     <span className="text-[1.3rem]" aria-hidden>{s.icon}</span>
-                    <h3 className="font-bold text-bone m-0">{s.name}</h3>
+                    <h3 className="font-bold text-mesa m-0">{s.name}</h3>
                   </div>
-                  <p className="text-bone/60 text-[0.86rem] leading-[1.6] m-0">{s.short}</p>
+                  <p className="text-mesa/60 text-[0.86rem] leading-[1.6] m-0">{s.short}</p>
                 </Link>
               ))}
             </div>
 
-            <h2 className="font-display text-[1.9rem] tracking-wide text-bone mb-6">
+            <h2 className="font-display text-[1.9rem] tracking-wide text-mesa mb-6">
               Frequently asked questions about {a.city} stucco
             </h2>
             <FAQAccordion faqs={localFaqs} />
@@ -127,41 +127,41 @@ export default async function ServiceAreaPage(props: {
           </div>
 
           <aside className="md:sticky md:top-24 space-y-5">
-            <div className="bg-mesa-100/70 border border-sun/15 rounded-2xl p-6 shadow-[0_18px_44px_-16px_rgba(0,0,0,0.5)]">
-              <h3 className="font-display text-[1.5rem] tracking-wide text-bone mb-1">
+            <div className="bg-bone border border-adobe/15 rounded-2xl p-6 shadow-[0_18px_44px_-16px_rgba(0,0,0,0.5)]">
+              <h3 className="font-display text-[1.5rem] tracking-wide text-mesa mb-1">
                 Free {a.city} estimate
               </h3>
-              <p className="text-bone/65 text-sm mb-5">
+              <p className="text-mesa/65 text-sm mb-5">
                 Tell us about your project — we typically respond same-day.
               </p>
               <Link
                 href="/contact"
-                className="block text-center bg-gradient-to-b from-clay to-terracotta text-bone font-extrabold py-3 rounded-full no-underline shadow-[0_4px_14px_rgba(194,86,43,0.4)]"
+                className="block text-center bg-gradient-to-b from-clay to-terracotta text-mesa font-extrabold py-3 rounded-full no-underline shadow-[0_4px_14px_rgba(194,86,43,0.4)]"
               >
                 Request Estimate
               </Link>
               <a
                 href={`tel:${siteConfig.phoneE164}`}
-                className="block text-center mt-3 border border-sun/30 text-bone font-bold py-3 rounded-full no-underline hover:border-sun"
+                className="block text-center mt-3 border border-adobe/25 text-mesa font-bold py-3 rounded-full no-underline hover:border-sun"
               >
                 📞 {siteConfig.phone}
               </a>
               <dl className="mt-6 grid grid-cols-2 gap-3 text-[0.78rem]">
                 <div>
-                  <dt className="text-sun/75 font-bold tracking-wider uppercase">Drive Time</dt>
-                  <dd className="text-bone font-bold mt-0.5">
+                  <dt className="text-adobe font-bold tracking-wider uppercase">Drive Time</dt>
+                  <dd className="text-mesa font-bold mt-0.5">
                     {a.drivingMinutes === 0 ? 'On-site' : `~${a.drivingMinutes} min`}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-sun/75 font-bold tracking-wider uppercase">License</dt>
-                  <dd className="text-bone font-bold mt-0.5">CSLB #{siteConfig.cslb}</dd>
+                  <dt className="text-adobe font-bold tracking-wider uppercase">License</dt>
+                  <dd className="text-mesa font-bold mt-0.5">CSLB #{siteConfig.cslb}</dd>
                 </div>
               </dl>
             </div>
 
-            <div className="bg-mesa-100/40 border border-sun/10 rounded-2xl p-6">
-              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-sun/75 mb-3">
+            <div className="bg-bone border border-adobe/15 rounded-2xl p-6">
+              <h3 className="font-condensed text-[0.7rem] font-bold tracking-[0.32em] uppercase text-adobe mb-3">
                 Nearby Areas
               </h3>
               <ul className="list-none m-0 p-0 grid grid-cols-2 gap-1.5">
@@ -169,7 +169,7 @@ export default async function ServiceAreaPage(props: {
                   <li key={o.slug}>
                     <Link
                       href={`/service-areas/${o.slug}`}
-                      className="text-bone/70 hover:text-clay no-underline text-[0.88rem] font-semibold"
+                      className="text-mesa/70 hover:text-terracotta no-underline text-[0.88rem] font-semibold"
                     >
                       {o.city}
                     </Link>

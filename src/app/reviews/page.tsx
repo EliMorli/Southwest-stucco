@@ -22,20 +22,20 @@ export default function ReviewsPage() {
         crumbs={[{ label: 'Reviews' }]}
       />
 
-      <section className="bg-mesa-fade py-12 px-[5vw]">
-        <div className="max-w-[900px] mx-auto bg-mesa-100/60 border border-sun/15 rounded-2xl p-8 text-center">
-          <span className="text-clay text-2xl tracking-widest" aria-hidden>
+      <section className="bg-sand-fade py-12 px-[5vw]">
+        <div className="max-w-[900px] mx-auto bg-bone border border-adobe/15 rounded-2xl p-8 text-center">
+          <span className="text-terracotta text-2xl tracking-widest" aria-hidden>
             ★★★★★
           </span>
-          <p className="text-bone mt-3 font-extrabold text-lg">
+          <p className="text-mesa mt-3 font-extrabold text-lg">
             {aggregate.ratingValue.toFixed(1)} / 5 average rating · {aggregate.reviewCount} reviews
           </p>
-          <p className="text-bone/65 mt-3 text-sm leading-[1.7] max-w-[620px] mx-auto">
+          <p className="text-mesa/65 mt-3 text-sm leading-[1.7] max-w-[620px] mx-auto">
             We feature a curated selection of recent customer testimonials below. To leave a review
             of your own — or read public reviews — find us on Google,{' '}
             <Link
               href={siteConfig.social.facebook}
-              className="underline text-sun hover:text-clay"
+              className="underline text-terracotta hover:text-terracotta"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -44,7 +44,7 @@ export default function ReviewsPage() {
             , or{' '}
             <Link
               href={siteConfig.social.instagram}
-              className="underline text-sun hover:text-clay"
+              className="underline text-terracotta hover:text-terracotta"
               target="_blank"
               rel="noopener noreferrer"
             >
