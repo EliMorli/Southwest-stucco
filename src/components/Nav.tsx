@@ -41,7 +41,7 @@ export function Nav() {
           aria-label={`${siteConfig.name} home`}
         >
           <span className="relative w-[46px] h-[46px] rounded-full overflow-hidden border-2 border-sun bg-bone flex-shrink-0 shadow-[0_0_18px_rgba(212,165,116,0.45)]">
-            <Image src="/logo.png" alt="" fill sizes="46px" className="object-cover" priority />
+            <Image src="/logo.png" alt="" fill sizes="46px" className="object-cover" />
           </span>
           <span className="leading-[1.1] inline-block">
             <span className="block font-display text-[1rem] sm:text-[1.2rem] tracking-[0.1em] sm:tracking-[0.12em] text-bone">
