@@ -211,7 +211,7 @@ export default function GeneralContractorsPage() {
                   <h3 className="font-display text-[1.35rem] tracking-wide text-mesa mb-1">
                     {p.name}
                   </h3>
-                  <p className="font-serif italic text-terracotta text-[1rem] mb-3">{p.system}</p>
+                  <p className="font-serif italic text-adobe text-[1rem] mb-3">{p.system}</p>
                   <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-1 text-[0.88rem]">
                     <div>
                       <dt className="text-adobe font-bold tracking-wide uppercase text-[0.66rem]">

@@ -40,7 +40,7 @@ export default function ServiceAreasPage() {
                       {a.county} · {a.zips.join(' / ')}
                     </p>
                   </div>
-                  <span className="text-[0.72rem] text-mesa/50 font-bold tracking-wide whitespace-nowrap mt-1">
+                  <span className="text-[0.72rem] text-mesa/65 font-bold tracking-wide whitespace-nowrap mt-1">
                     {a.drivingMinutes === 0 ? 'HQ' : `${a.drivingMinutes} min`}
                   </span>
                 </div>

@@ -67,7 +67,7 @@ export function Testimonials({
               key={t.name + t.date}
               className="bg-bone p-8 flex flex-col shadow-[0_8px_24px_-12px_rgba(41,29,20,0.18)]"
             >
-              <span className="text-terracotta text-base tracking-widest mb-4" aria-hidden>
+              <span className="text-adobe text-base tracking-widest mb-4" aria-hidden>
                 {'★'.repeat(t.rating)}
               </span>
               <p className="font-serif italic text-mesa/85 leading-[1.55] text-[1.15rem] flex-1">

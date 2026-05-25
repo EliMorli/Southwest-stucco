@@ -114,7 +114,7 @@ export default async function ServiceAreaPage(props: {
                     <span className="text-[1.3rem]" aria-hidden>{s.icon}</span>
                     <h3 className="font-bold text-mesa m-0">{s.name}</h3>
                   </div>
-                  <p className="text-mesa/60 text-[0.86rem] leading-[1.6] m-0">{s.short}</p>
+                  <p className="text-mesa/70 text-[0.86rem] leading-[1.6] m-0">{s.short}</p>
                 </Link>
               ))}
             </div>
