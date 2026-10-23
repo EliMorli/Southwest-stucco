@@ -30,7 +30,7 @@ export function PageHero({
         sws
       </div>
 
-      <div className="relative z-[1] max-w-[1300px] mx-auto animate-rise-in">
+      <div className="relative z-[1] max-w-[1300px] mx-auto animate-hero-rise">
         <Breadcrumbs trail={crumbs} variant="light" />
         {eyebrow && (
           <div className="flex items-center gap-3 mb-6">

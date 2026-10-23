@@ -59,7 +59,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-[2] w-full px-[5vw] pb-16 md:pb-20 pt-28 md:pt-36 max-w-[1400px] mx-auto">
-        <div className="max-w-[920px] animate-rise-in">
+        <div className="max-w-[920px] animate-hero-rise">
           <span className="inline-flex items-center gap-2.5 bg-mesa/40 backdrop-blur border border-sun/30 text-sun rounded-full text-[0.74rem] font-bold py-[0.4rem] px-[1rem] mb-8 tracking-[0.18em] uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-clay animate-blink" aria-hidden />
             {hero.badge}

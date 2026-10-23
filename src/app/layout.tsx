@@ -3,6 +3,8 @@ import { Bebas_Neue, Nunito, Barlow_Condensed, Cormorant_Garamond } from 'next/f
 import { siteConfig } from '@/lib/site-config';
 import { JsonLd } from '@/components/JsonLd';
 import { Nav } from '@/components/Nav';
+import { services } from '@/lib/services';
+import { serviceAreas } from '@/lib/areas';
 import { Footer } from '@/components/Footer';
 import { StickyCallButton } from '@/components/StickyCallButton';
 import { CookieConsent, consentBootScript } from '@/components/CookieConsent';
@@ -141,7 +143,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        <Nav />
+        <Nav
+          services={services.map(({ slug, name, short, icon }) => ({ slug, name, short, icon }))}
+          areas={serviceAreas.map(({ slug, city }) => ({ slug, city }))}
+        />
         <main id="main">{children}</main>
         <Footer />
         <StickyCallButton />

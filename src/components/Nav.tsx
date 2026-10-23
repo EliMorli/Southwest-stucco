@@ -4,8 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { siteConfig } from '@/lib/site-config';
-import { services } from '@/lib/services';
-import { serviceAreas } from '@/lib/areas';
+import type { Service } from '@/lib/services';
+import type { ServiceArea } from '@/lib/areas';
+
+// Only the fields the menus render. The layout passes these in so the full
+// service/area copy (process steps, FAQs, neighborhoods) stays out of the client bundle.
+export type NavService = Pick<Service, 'slug' | 'name' | 'short' | 'icon'>;
+export type NavArea = Pick<ServiceArea, 'slug' | 'city'>;
 
 const primaryLinks: { href: string; label: string; mega?: 'services' | 'areas' }[] = [
   { href: '/services', label: 'Services', mega: 'services' },
@@ -17,7 +22,7 @@ const primaryLinks: { href: string; label: string; mega?: 'services' | 'areas' }
   { href: '/contact', label: 'Contact' },
 ];
 
-export function Nav() {
+export function Nav({ services, areas }: { services: NavService[]; areas: NavArea[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMega, setOpenMega] = useState<'services' | 'areas' | null>(null);
 
@@ -122,7 +127,7 @@ export function Nav() {
             {openMega === 'areas' && (
               <div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1">
-                  {serviceAreas.map((a) => (
+                  {areas.map((a) => (
                     <Link
                       key={a.slug}
                       href={`/service-areas/${a.slug}`}

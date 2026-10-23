@@ -109,7 +109,7 @@ Hi [Name],
 
 Hope the [project name] punch list is wrapping up cleanly.
 
-We just relaunched our website (southweststucco.net) and we're rebuilding our online presence — specifically for stucco subcontracting on the kind of commercial work we do for you.
+We just relaunched our website (southweststucco.info) and we're rebuilding our online presence — specifically for stucco subcontracting on the kind of commercial work we do for you.
 
 If [GC firm] has a "Trade Partners" or "Subcontractors" page on your site, would you be willing to add us as a stucco/plastering trade partner? Happy to reciprocate with a link or a referral testimonial on our site as well.
 
@@ -166,6 +166,24 @@ Create one piece of "linkable content" per quarter:
   - Designers / decor accounts
   - Local realtors
 - **A "Hiring a Stucco Sub" PDF checklist** that GC PMs download and other industry blogs link to.
+
+### Use the question pages as link targets
+
+The site now has 15 single-question answer pages at `/questions` (cost, repair, permits, fire resistance, "best stucco contractor in …"). They are built to be cited — by answer engines and by people. When you get a link, point it at the most specific page, not the homepage:
+
+| Who might link | Page to send them |
+|---|---|
+| Fire-rebuild groups, Palisades / Malibu / Altadena community sites, architects doing rebuilds | `/questions/is-stucco-fire-resistant` |
+| Realtors, home inspectors, property managers (blog posts, "trusted vendors" pages) | `/questions/how-to-tell-if-stucco-has-water-damage`, `/questions/are-stucco-cracks-normal` |
+| Local news / Patch / neighborhood newsletters doing cost stories | `/questions/how-much-does-it-cost-to-stucco-a-house-in-los-angeles` |
+| HOA management companies (Calabasas, Hidden Hills, Westlake) | `/questions/best-stucco-contractor-calabasas`, `/questions/do-i-need-a-permit-to-re-stucco-in-los-angeles` |
+| GC partners | `/general-contractors` (unchanged) |
+
+When answering questions on Reddit (r/LosAngeles, r/HomeImprovement), Nextdoor, Houzz or Quora, answer fully in the post and link the matching question page as the source — never just a bare link.
+
+### Keep the domain consistent
+
+The live site is **https://southweststucco.info** (canonical, no `www`). Use exactly that URL in every listing, citation and backlink request — mixed `.net` / `.info` / `www` versions split the signal. In Vercel → Settings → Domains, set `www.southweststucco.info` to **redirect** to `southweststucco.info` (today both serve the page).
 
 ---
 

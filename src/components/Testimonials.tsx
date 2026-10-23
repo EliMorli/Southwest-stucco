@@ -1,4 +1,5 @@
 import { testimonials, aggregate } from '@/lib/testimonials';
+import { siteConfig } from '@/lib/site-config';
 
 export function Testimonials({
   variant = 'home',
@@ -97,7 +98,7 @@ export function ReviewSchema() {
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://southweststucco.net/#business',
+    '@id': `${siteConfig.url}/#business`,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: aggregate.ratingValue.toFixed(1),
