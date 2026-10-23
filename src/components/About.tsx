@@ -130,7 +130,7 @@ export function About() {
                 key={s.name}
                 className="relative bg-bone p-7 group hover:bg-terracotta/[0.06] transition-colors min-h-[230px] flex flex-col"
               >
-                <div className="font-serif italic text-terracotta text-[1rem] mb-4">
+                <div className="font-serif italic text-adobe text-[1rem] mb-4">
                   0{i + 1}
                 </div>
                 <span className="text-[1.6rem] mb-3" aria-hidden>{s.icon}</span>

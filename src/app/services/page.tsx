@@ -35,7 +35,7 @@ export default function ServicesPage() {
                 {s.name}
               </h2>
               <p className="text-mesa/65 text-[0.92rem] leading-[1.7] flex-1">{s.short}</p>
-              <span className="text-terracotta text-sm font-bold mt-5">Learn more →</span>
+              <span className="text-adobe text-sm font-bold mt-5">Learn more →</span>
             </Link>
           ))}
         </div>

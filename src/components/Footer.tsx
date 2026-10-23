@@ -35,7 +35,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-ink-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 📸
               </a>
@@ -46,7 +46,7 @@ export function Footer() {
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-ink-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 👍
               </a>

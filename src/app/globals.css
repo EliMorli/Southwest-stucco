@@ -50,6 +50,9 @@ body::after {
   mix-blend-mode: overlay;
 }
 
+/* Cookie banner is server-rendered; hide it pre-paint once a choice is stored */
+html[data-cc] .cookie-banner { display: none; }
+
 /* Buttons */
 .btn-red {
   background: linear-gradient(180deg, var(--clay) 0%, var(--terracotta) 100%);

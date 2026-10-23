@@ -87,28 +87,26 @@ export function Contact() {
           {contact.info.map((i) => (
             <div
               key={i.label}
-              className="flex gap-4 items-start py-5 border-b border-adobe/15"
+              className="relative pl-14 py-5 border-b border-adobe/15"
             >
-              <span
-                aria-hidden
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-terracotta/15 border border-terracotta/30 text-lg flex-shrink-0"
-              >
-                {i.icon}
-              </span>
-              <div>
-                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-adobe font-bold mb-1">
-                  {i.label}
-                </dt>
-                <dd className="m-0 text-base text-mesa font-semibold leading-[1.5] whitespace-pre-line">
-                  {i.href ? (
-                    <a className="hover:text-terracotta transition-colors no-underline" href={i.href}>
-                      {i.value}
-                    </a>
-                  ) : (
-                    i.value
-                  )}
-                </dd>
-              </div>
+              <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-adobe font-bold mb-1">
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-5 flex items-center justify-center w-10 h-10 rounded-full bg-terracotta/15 border border-terracotta/30 text-lg normal-case tracking-normal"
+                >
+                  {i.icon}
+                </span>
+                {i.label}
+              </dt>
+              <dd className="m-0 text-base text-mesa font-semibold leading-[1.5] whitespace-pre-line">
+                {i.href ? (
+                  <a className="hover:text-terracotta transition-colors no-underline" href={i.href}>
+                    {i.value}
+                  </a>
+                ) : (
+                  i.value
+                )}
+              </dd>
             </div>
           ))}
         </dl>

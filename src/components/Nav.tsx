@@ -31,14 +31,13 @@ export function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed top-0 inset-x-0 z-[600] bg-mesa/95 backdrop-blur-xl border-b border-terracotta/60 shadow-[0_2px_0_0_rgba(212,165,116,0.18)]"
+      className="fixed top-0 inset-x-0 z-[600] bg-mesa/95 border-b border-terracotta/60 shadow-[0_2px_0_0_rgba(212,165,116,0.18)]"
       onMouseLeave={() => setOpenMega(null)}
     >
       <div className="flex items-center justify-between px-[5vw] py-3">
         <Link
           href="/"
           className="flex items-center gap-3 no-underline"
-          aria-label={`${siteConfig.name} home`}
         >
           <span className="relative w-[46px] h-[46px] rounded-full overflow-hidden border-2 border-sun bg-bone flex-shrink-0 shadow-[0_0_18px_rgba(212,165,116,0.45)]">
             <Image src="/logo.png" alt="" fill sizes="46px" className="object-cover" />
@@ -98,7 +97,7 @@ export function Nav() {
       {/* Desktop mega menu */}
       {openMega && (
         <div
-          className="hidden lg:block absolute inset-x-0 top-full bg-mesa-100 border-t border-sun/25 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]"
+          className="hidden lg:block absolute inset-x-0 top-full bg-ink-100 border-t border-sun/25 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]"
           onMouseEnter={() => setOpenMega(openMega)}
           onMouseLeave={() => setOpenMega(null)}
         >
@@ -147,7 +146,7 @@ export function Nav() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-sun/25 bg-mesa-100 max-h-[80vh] overflow-y-auto shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]">
+        <div className="lg:hidden border-t border-sun/25 bg-ink-100 max-h-[80vh] overflow-y-auto shadow-[0_24px_48px_-12px_rgba(0,0,0,0.7)]">
           <ul className="flex flex-col list-none m-0 p-4 gap-1">
             {primaryLinks.map((l) => (
               <li key={l.href}>
