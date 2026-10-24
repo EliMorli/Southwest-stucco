@@ -1,6 +1,6 @@
 # Southwest Stucco Inc. — Website
 
-Production-grade marketing site for [Southwest Stucco Inc.](https://southweststucco.net), a family-owned stucco contractor in Calabasas, CA.
+Production-grade marketing site for [Southwest Stucco Inc.](https://www.southweststucco.info), a family-owned stucco contractor in Calabasas, CA.
 
 Built with **Next.js 14 (App Router)** + **TypeScript** + **Tailwind CSS**, optimized for SEO, AEO (answer engines like ChatGPT / Perplexity / Google AI Overviews), and GEO (local search).
 
@@ -46,8 +46,8 @@ Without a Resend key the form still submits successfully (UI shows success) but 
    - `RESEND_API_KEY`
    - `RESEND_FROM_EMAIL`
    - `CONTACT_TO_EMAIL`
-   - `NEXT_PUBLIC_SITE_URL` → `https://southweststucco.net`
-4. Add your custom domain `southweststucco.net` in Vercel → Project → Settings → Domains
+   - `NEXT_PUBLIC_SITE_URL` → `https://www.southweststucco.info`
+4. Add your custom domain `www.southweststucco.info` (and the bare domain, redirecting to `www`) in Vercel → Project → Settings → Domains
 5. Update the registrar's DNS records as Vercel instructs
 
 ## Push to GitHub

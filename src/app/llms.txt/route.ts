@@ -122,7 +122,7 @@ Call or text (818) 888-8554, email Southweststucco@gmail.com, or use the contact
 
 ## Contact
 
-- Phone (call or text): $${siteConfig.phone}
+- Phone (call or text): ${siteConfig.phone}
 - Email: ${siteConfig.email}
 - Office: ${siteConfig.address.streetAddress}, ${siteConfig.address.locality}, ${siteConfig.address.region} ${siteConfig.address.postalCode}
 - Website: ${siteConfig.url}

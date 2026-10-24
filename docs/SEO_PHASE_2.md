@@ -109,7 +109,7 @@ Hi [Name],
 
 Hope the [project name] punch list is wrapping up cleanly.
 
-We just relaunched our website (southweststucco.info) and we're rebuilding our online presence — specifically for stucco subcontracting on the kind of commercial work we do for you.
+We just relaunched our website (www.southweststucco.info) and we're rebuilding our online presence — specifically for stucco subcontracting on the kind of commercial work we do for you.
 
 If [GC firm] has a "Trade Partners" or "Subcontractors" page on your site, would you be willing to add us as a stucco/plastering trade partner? Happy to reciprocate with a link or a referral testimonial on our site as well.
 
@@ -183,7 +183,9 @@ When answering questions on Reddit (r/LosAngeles, r/HomeImprovement), Nextdoor, 
 
 ### Keep the domain consistent
 
-The live site is **https://southweststucco.info** (canonical, no `www`). Use exactly that URL in every listing, citation and backlink request — mixed `.net` / `.info` / `www` versions split the signal. In Vercel → Settings → Domains, set `www.southweststucco.info` to **redirect** to `southweststucco.info` (today both serve the page).
+The live site is **https://www.southweststucco.info** (canonical, with `www`). Use exactly that URL in every listing, citation and backlink request — mixed `.net` / `.info` / no-`www` versions split the signal.
+
+Vercel redirects the bare `southweststucco.info` to `www`, but only if DNS sends it to Vercel. At GoDaddy (DNS → `southweststucco.info`) the `@` A records must be **only** Vercel's `216.150.1.1`; delete the GoDaddy ones (`13.248.243.5`, `76.223.105.230`) — while they exist, most visits to the bare domain get a GoDaddy placeholder page instead of the site.
 
 ---
 
