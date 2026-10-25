@@ -31,9 +31,9 @@ export function IntroBand() {
                 <span className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase font-bold text-adobe block mb-1.5">
                   {`Reason ${String(i + 1).padStart(2, '0')}`}
                 </span>
-                <h3 className="font-display text-[1.55rem] tracking-wide text-mesa leading-[1.05] mb-1.5">
+                <h2 className="font-display text-[1.55rem] tracking-wide text-mesa leading-[1.05] mb-1.5">
                   {item.label}
-                </h3>
+                </h2>
                 <p className="font-serif italic text-mesa/70 text-[1rem] leading-[1.45] m-0">
                   {item.sub}
                 </p>

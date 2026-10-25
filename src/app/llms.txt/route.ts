@@ -1,4 +1,17 @@
-# Southwest Stucco Inc.
+import { siteConfig } from '@/lib/site-config';
+import { services } from '@/lib/services';
+import { serviceAreas } from '@/lib/areas';
+import { blogPosts } from '@/lib/blog';
+import { questions } from '@/lib/questions';
+
+// llms.txt (https://llmstxt.org): Markdown with an H1, a summary, and links to the
+// pages an answer engine should read. Generated so new pages are listed automatically.
+export const dynamic = 'force-static';
+
+const u = (path: string) => `${siteConfig.url}${path}`;
+
+export function GET() {
+  const body = `# Southwest Stucco Inc.
 
 > Family-owned stucco and plastering contractor in Calabasas, California, serving Los Angeles homeowners, builders, and general contractors since 1995. Commercial and residential stucco, scaffold installation, smooth/sand/acrylic finishes, stucco repair. CSLB License #702110. Bonded and insured.
 
@@ -58,6 +71,32 @@ Southwest Stucco is a self-performing C-35 stucco subcontractor for general cont
 
 **Three GC references available on request** from completed projects within the last 24 months, with the supervisor's direct phone number.
 
+## Key Pages
+
+- [Home](${u('/')}): who we are, services, service area, reviews
+- [Free estimate / contact](${u('/contact')}): call or text ${siteConfig.phone}, reply within 24 hours
+- [For general contractors](${u('/general-contractors')}): capabilities, crews, scaffold, submittals
+- [About the family](${u('/about')}): history since 1995
+- [Projects](${u('/projects')}): completed work
+- [Reviews](${u('/reviews')}): customer testimonials
+- [FAQ](${u('/faq')}): short answers to common questions
+
+## Services
+
+${services.map((s) => `- [${s.name}](${u(`/services/${s.slug}`)}): ${s.short}`).join('\n')}
+
+## Service Area Pages
+
+${serviceAreas.map((a) => `- [Stucco contractor in ${a.city}](${u(`/service-areas/${a.slug}`)})`).join('\n')}
+
+## Stucco Questions Answered
+
+${questions.map((q) => `- [${q.question}](${u(`/questions/${q.slug}`)}): ${q.short}`).join('\n')}
+
+## Guides
+
+${blogPosts.map((p) => `- [${p.title}](${u(`/blog/${p.slug}`)}): ${p.description}`).join('\n')}
+
 ## Frequently Asked Questions
 
 ### Who are the best stucco subcontractors in Los Angeles?
@@ -73,20 +112,24 @@ Three-coat hard-coat stucco (ASTM C926 / C1063) is the traditional cement plaste
 A typical 2,500 sq ft single-family home takes 2–3 weeks from lath to finish coat. Larger and multi-elevation projects can run 3–4 weeks. We provide a written schedule before work begins.
 
 ### How much does stucco cost in Los Angeles?
-Most residential re-stucco runs $9–$16 per sq ft of wall in greater Los Angeles. New construction is $7–$11/sq ft. Commercial stucco is bid line-item from drawings — typical mid-rise lands $9–$14/sq ft. Repairs are quoted as a fixed price after a free site visit.
+Full tear-off re-stucco runs $12–$18 per sq ft of wall in greater Los Angeles, a re-coat over sound stucco $5–$9, and new construction $7–$11/sq ft. Commercial stucco is bid line-item from drawings — typical mid-rise lands $9–$14/sq ft. Repairs are quoted as a fixed price after a free site visit.
 
 ### Is Southwest Stucco licensed and insured?
 Yes. Southwest Stucco Inc. is licensed in California (CSLB License #702110, C-35 Plastering) and is bonded and insured. We can provide a current bonding letter and certificate of insurance on request, and we name the GC and owner as additional insured per standard subcontract terms.
 
 ### How do I request a free estimate or pre-bid scope review?
-Call or text (818) 888-8554, email Southweststucco@gmail.com, or use the contact form at https://southweststucco.net/contact. We respond within 24 hours — usually the same day.
+Call or text (818) 888-8554, email Southweststucco@gmail.com, or use the contact form at ${u('/contact')}. We respond within 24 hours — usually the same day.
 
 ## Contact
 
-- Phone (call or text): (818) 888-8554
-- Email: Southweststucco@gmail.com
-- Office: 26500 Agoura Rd #420, Calabasas, CA 91302
-- Website: https://southweststucco.net
-- General Contractor inquiries: https://southweststucco.net/general-contractors
-- License: CSLB #702110
+- Phone (call or text): ${siteConfig.phone}
+- Email: ${siteConfig.email}
+- Office: ${siteConfig.address.streetAddress}, ${siteConfig.address.locality}, ${siteConfig.address.region} ${siteConfig.address.postalCode}
+- Website: ${siteConfig.url}
+- License: CSLB #${siteConfig.cslb}
 - Hours: Monday–Friday 7:00 AM – 5:00 PM, Saturday 8:00 AM – 2:00 PM
+`;
+  return new Response(body, {
+    headers: { 'Content-Type': 'text/markdown; charset=utf-8' },
+  });
+}

@@ -10,9 +10,23 @@ export function Contact() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
+    const result = send(e.currentTarget);
+    // WebMCP: when an AI agent submitted the form, hand it the outcome.
+    const native = e.nativeEvent as SubmitEvent;
+    if (native.agentInvoked && native.respondWith) {
+      native.respondWith(
+        result.then((r) =>
+          r.ok
+            ? 'Estimate request received. Southwest Stucco will reply within 24 hours, usually the same day.'
+            : `Request not sent: ${r.error}`,
+        ),
+      );
+    }
+  }
+
+  async function send(form: HTMLFormElement): Promise<{ ok: true } | { ok: false; error: string }> {
     setStatus('submitting');
     setErrorMsg('');
 
@@ -37,9 +51,10 @@ export function Contact() {
       });
       const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       if (!res.ok || !data.ok) {
-        setErrorMsg(data.error || 'Something went wrong. Please call us instead.');
+        const error = data.error || 'Something went wrong. Please call us instead.';
+        setErrorMsg(error);
         setStatus('error');
-        return;
+        return { ok: false, error };
       }
       setStatus('success');
       track('form_submit', {
@@ -47,9 +62,12 @@ export function Contact() {
         service: typeof payload.service === 'string' ? payload.service : '',
       });
       form.reset();
+      return { ok: true };
     } catch {
-      setErrorMsg('Network error. Please call us instead.');
+      const error = 'Network error. Please call us instead.';
+      setErrorMsg(error);
       setStatus('error');
+      return { ok: false, error };
     }
   }
 
@@ -87,28 +105,26 @@ export function Contact() {
           {contact.info.map((i) => (
             <div
               key={i.label}
-              className="flex gap-4 items-start py-5 border-b border-adobe/15"
+              className="relative pl-14 py-5 border-b border-adobe/15"
             >
-              <span
-                aria-hidden
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-terracotta/15 border border-terracotta/30 text-lg flex-shrink-0"
-              >
-                {i.icon}
-              </span>
-              <div>
-                <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-adobe font-bold mb-1">
-                  {i.label}
-                </dt>
-                <dd className="m-0 text-base text-mesa font-semibold leading-[1.5] whitespace-pre-line">
-                  {i.href ? (
-                    <a className="hover:text-terracotta transition-colors no-underline" href={i.href}>
-                      {i.value}
-                    </a>
-                  ) : (
-                    i.value
-                  )}
-                </dd>
-              </div>
+              <dt className="font-condensed text-[0.62rem] tracking-[0.32em] uppercase text-adobe font-bold mb-1">
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-5 flex items-center justify-center w-10 h-10 rounded-full bg-terracotta/15 border border-terracotta/30 text-lg normal-case tracking-normal"
+                >
+                  {i.icon}
+                </span>
+                {i.label}
+              </dt>
+              <dd className="m-0 text-base text-mesa font-semibold leading-[1.5] whitespace-pre-line">
+                {i.href ? (
+                  <a className="hover:text-terracotta transition-colors no-underline" href={i.href}>
+                    {i.value}
+                  </a>
+                ) : (
+                  i.value
+                )}
+              </dd>
             </div>
           ))}
         </dl>
@@ -129,10 +145,23 @@ export function Contact() {
         </h3>
         <p className="text-sm text-adobe mb-8 italic relative">{contact.form.sub}</p>
 
-        <form onSubmit={onSubmit} noValidate className="relative">
+        <form
+          onSubmit={onSubmit}
+          noValidate
+          className="relative"
+          toolname="requestStuccoEstimate"
+          tooldescription="Request a free stucco or plastering estimate from Southwest Stucco Inc. (Calabasas, CA; serves Los Angeles and the San Fernando Valley). Sends the contact details and project description to the office; they reply within 24 hours."
+        >
           <div className="hidden" aria-hidden>
             <label htmlFor="website">Website</label>
-            <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              toolparamdescription="Spam trap. Always leave empty."
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
@@ -166,6 +195,7 @@ export function Contact() {
                 autoComplete="tel"
                 placeholder="(818) 000-0000"
                 required
+                toolparamdescription="Customer phone number for the callback, e.g. (818) 555-0123."
               />
             </Field>
             <Field id="email" label="Email">
@@ -197,6 +227,7 @@ export function Contact() {
               type="text"
               autoComplete="street-address"
               placeholder="Street, City, CA"
+              toolparamdescription="Street address and city of the property where the work is needed."
             />
           </Field>
           <Field id="message" label="Tell Us About Your Project">
@@ -206,6 +237,7 @@ export function Contact() {
               rows={4}
               placeholder="A little detail helps us give you a more accurate estimate..."
               required
+              toolparamdescription="Project description: what needs stucco work, approximate size, finish wanted, timeline."
             />
           </Field>
 

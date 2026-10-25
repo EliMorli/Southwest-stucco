@@ -1,6 +1,6 @@
 # Southwest Stucco Inc. — Website
 
-Production-grade marketing site for [Southwest Stucco Inc.](https://southweststucco.net), a family-owned stucco contractor in Calabasas, CA.
+Production-grade marketing site for [Southwest Stucco Inc.](https://www.southweststucco.info), a family-owned stucco contractor in Calabasas, CA.
 
 Built with **Next.js 14 (App Router)** + **TypeScript** + **Tailwind CSS**, optimized for SEO, AEO (answer engines like ChatGPT / Perplexity / Google AI Overviews), and GEO (local search).
 
@@ -10,7 +10,9 @@ Built with **Next.js 14 (App Router)** + **TypeScript** + **Tailwind CSS**, opti
 - **JSON-LD structured data** ([src/components/JsonLd.tsx](src/components/JsonLd.tsx)) — `LocalBusiness`, `HomeAndConstructionBusiness`, `GeneralContractor`, `Organization`, `WebSite`, `FAQPage`, `Offer`, `Service` — surfaces direct answers in Google AI Overviews and Bing/Perplexity
 - **Sitemap** at `/sitemap.xml` ([src/app/sitemap.ts](src/app/sitemap.ts))
 - **robots.txt** at `/robots.txt` ([src/app/robots.ts](src/app/robots.ts)) — explicitly allows `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`, `CCBot`, `anthropic-ai`, `Applebot-Extended`
-- **llms.txt** at `/llms.txt` ([public/llms.txt](public/llms.txt)) — emerging standard for guiding LLM crawlers; structured Q&A and NAP info
+- **llms.txt** at `/llms.txt` ([src/app/llms.txt/route.ts](src/app/llms.txt/route.ts)) — generated Markdown for LLM crawlers: NAP, Q&A, and links to every service, area, question and blog page
+- **Question pages** at `/questions/*` ([src/lib/questions.ts](src/lib/questions.ts)) — one page per common search / AI-assistant question, short answer first, `FAQPage` schema
+- **WebMCP** — the contact form carries `toolname` / `tooldescription` so in-browser AI agents can request an estimate ([src/components/Contact.tsx](src/components/Contact.tsx))
 - **`geo.*` meta tags** + ICBM coordinates for local search (latitude/longitude of Calabasas)
 - **Service area + NAP** (Name/Address/Phone) consistently embedded in schema, footer, and contact section
 - **Next.js Font optimization** — Bebas Neue, Nunito, Barlow Condensed served self-hosted (no FOUT)
@@ -44,8 +46,8 @@ Without a Resend key the form still submits successfully (UI shows success) but 
    - `RESEND_API_KEY`
    - `RESEND_FROM_EMAIL`
    - `CONTACT_TO_EMAIL`
-   - `NEXT_PUBLIC_SITE_URL` → `https://southweststucco.net`
-4. Add your custom domain `southweststucco.net` in Vercel → Project → Settings → Domains
+   - `NEXT_PUBLIC_SITE_URL` → `https://www.southweststucco.info`
+4. Add your custom domain `www.southweststucco.info` (and the bare domain, redirecting to `www`) in Vercel → Project → Settings → Domains
 5. Update the registrar's DNS records as Vercel instructs
 
 ## Push to GitHub

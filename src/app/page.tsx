@@ -66,8 +66,9 @@ export default function HomePage() {
           </header>
           <FAQAccordion faqs={homeFaqs} />
           <FAQSchema faqs={homeFaqs} />
-          <p className="text-center mt-10">
+          <p className="text-center mt-10 flex flex-wrap gap-3 justify-center">
             <a href="/faq" className="btn-outline-dark">See all FAQs</a>
+            <a href="/questions" className="btn-outline-dark">Stucco questions, answered</a>
           </p>
         </div>
       </section>

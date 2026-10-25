@@ -3,9 +3,11 @@ import { Bebas_Neue, Nunito, Barlow_Condensed, Cormorant_Garamond } from 'next/f
 import { siteConfig } from '@/lib/site-config';
 import { JsonLd } from '@/components/JsonLd';
 import { Nav } from '@/components/Nav';
+import { services } from '@/lib/services';
+import { serviceAreas } from '@/lib/areas';
 import { Footer } from '@/components/Footer';
 import { StickyCallButton } from '@/components/StickyCallButton';
-import { CookieConsent } from '@/components/CookieConsent';
+import { CookieConsent, consentBootScript } from '@/components/CookieConsent';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { MicrosoftClarity } from '@/components/MicrosoftClarity';
 import { AnalyticsListener } from '@/components/AnalyticsListener';
@@ -106,13 +108,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png' },
-    ],
-    apple: '/apple-icon.png',
-  },
   category: 'business',
   other: {
     'geo.region': 'US-CA',
@@ -132,8 +127,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_ID || '';
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID || '';
   return (
-    <html lang="en" className={`${bebas.variable} ${nunito.variable} ${barlow.variable} ${cormorant.variable}`}>
+    <html
+      lang="en"
+      className={`${bebas.variable} ${nunito.variable} ${barlow.variable} ${cormorant.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: consentBootScript }} />
         <JsonLd />
       </head>
       <body>
@@ -143,7 +143,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
-        <Nav />
+        <Nav
+          services={services.map(({ slug, name, short, icon }) => ({ slug, name, short, icon }))}
+          areas={serviceAreas.map(({ slug, city }) => ({ slug, city }))}
+        />
         <main id="main">{children}</main>
         <Footer />
         <StickyCallButton />

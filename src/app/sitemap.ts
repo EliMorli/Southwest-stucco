@@ -3,6 +3,7 @@ import { siteConfig } from '@/lib/site-config';
 import { services } from '@/lib/services';
 import { serviceAreas } from '@/lib/areas';
 import { blogPosts } from '@/lib/blog';
+import { questions } from '@/lib/questions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -46,5 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...serviceEntries, ...areaEntries, ...blogEntries];
+  const questionEntries: MetadataRoute.Sitemap = [
+    { url: u('/questions'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    ...questions.map((q) => ({
+      url: u(`/questions/${q.slug}`),
+      lastModified: new Date(q.updatedAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ];
+
+  return [...staticEntries, ...serviceEntries, ...areaEntries, ...blogEntries, ...questionEntries];
 }

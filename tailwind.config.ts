@@ -59,6 +59,9 @@ const config: Config = {
         'blink': 'blink 2s ease-in-out infinite',
         'sun-pulse': 'sunpulse 6s ease-in-out infinite',
         'rise-in': 'risein 1.1s cubic-bezier(0.16, 1, 0.3, 1) both',
+        // Above-the-fold heroes: slide only. Text that starts at opacity 0 is never
+        // counted for Largest Contentful Paint, which handed LCP to the late cookie banner.
+        'hero-rise': 'herorise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both',
         'fade-in': 'fadein 1.4s ease-out both',
         'kenburns': 'kenburns 18s ease-in-out infinite alternate',
       },
@@ -82,6 +85,10 @@ const config: Config = {
         risein: {
           '0%': { opacity: '0', transform: 'translateY(28px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        herorise: {
+          '0%': { transform: 'translateY(18px)' },
+          '100%': { transform: 'translateY(0)' },
         },
         fadein: {
           '0%': { opacity: '0' },

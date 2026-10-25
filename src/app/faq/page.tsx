@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
 import { CtaStrip } from '@/components/CtaStrip';
 import { FAQAccordion, FAQSchema } from '@/components/FAQAccordion';
@@ -24,6 +25,9 @@ export default function FAQPage() {
         <div className="max-w-[1000px] mx-auto">
           <FAQAccordion faqs={generalFaqs} />
           <FAQSchema faqs={generalFaqs} />
+          <p className="text-center mt-12">
+            <Link href="/questions" className="btn-outline-dark">More stucco questions, answered in depth</Link>
+          </p>
         </div>
       </section>
       <CtaStrip />

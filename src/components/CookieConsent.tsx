@@ -12,11 +12,19 @@ export function getConsent(): Consent {
   return v === 'accepted' || v === 'rejected' ? v : null;
 }
 
+/**
+ * Runs in <head> before first paint: a visitor who already chose gets
+ * html[data-cc], which hides the server-rendered banner via globals.css.
+ */
+export const consentBootScript = `try{if(localStorage.getItem('${KEY}'))document.documentElement.setAttribute('data-cc','')}catch(e){}`;
+
 export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+  // Rendered in the server HTML so it paints with the page instead of
+  // popping in after hydration (it was the mobile LCP element, ~2.4s late).
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    if (!getConsent()) setVisible(true);
+    if (getConsent()) setVisible(false);
   }, []);
 
   if (!visible) return null;
@@ -33,7 +41,7 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="fixed inset-x-3 bottom-3 md:left-auto md:right-5 md:bottom-5 md:max-w-[420px] z-[800] bg-mesa-100/95 backdrop-blur-md border border-sun/20 rounded-2xl shadow-[0_18px_44px_-12px_rgba(0,0,0,0.6)] p-5 text-bone"
+      className="cookie-banner fixed inset-x-3 bottom-3 md:left-auto md:right-5 md:bottom-5 md:max-w-[420px] z-[800] bg-ink-100/95 border border-sun/20 rounded-2xl shadow-[0_18px_44px_-12px_rgba(0,0,0,0.6)] p-5 text-bone"
     >
       <p className="text-sm leading-[1.6] text-bone/85 m-0">
         We use cookies to understand how visitors use our site so we can improve it. None of this is

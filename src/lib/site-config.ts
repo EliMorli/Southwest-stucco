@@ -5,7 +5,7 @@ export const siteConfig = {
   tagline: 'Family Owned & Operated Since 1995',
   description:
     'Family-owned stucco and plastering contractor in Calabasas, CA serving Los Angeles homeowners and builders since 1995. Commercial & residential stucco, scaffold, smooth/sand/acrylic finishes, repair. CSLB License #702110. Free estimates.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://southweststucco.net',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.southweststucco.info',
   phone: '(818) 888-8554',
   phoneE164: '+18188888554',
   email: 'Southweststucco@gmail.com',

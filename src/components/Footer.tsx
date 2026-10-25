@@ -35,7 +35,7 @@ export function Footer() {
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-ink-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 📸
               </a>
@@ -46,7 +46,7 @@ export function Footer() {
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-mesa-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
+                className="w-10 h-10 rounded-full bg-ink-100 border border-sun/20 flex items-center justify-center text-sun/75 hover:bg-terracotta hover:text-bone hover:border-terracotta transition"
               >
                 👍
               </a>
@@ -140,7 +140,9 @@ export function Footer() {
 
       <div className="max-w-[1300px] mx-auto pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-[0.74rem] text-bone/65">
         <p className="m-0 text-center md:text-left">{footerCopy.copyright}</p>
-        <ul className="list-none m-0 p-0 flex flex-wrap gap-x-4 gap-y-1 justify-center md:justify-end">
+        <ul className="list-none m-0 p-0 flex flex-wrap gap-x-4 gap-y-1 justify-center md:justify-end [&_a]:inline-flex [&_a]:items-center [&_a]:min-h-6">
+          <li><Link href="/questions" className="hover:text-clay">Stucco Questions</Link></li>
+          <li><Link href="/faq" className="hover:text-clay">FAQ</Link></li>
           <li><Link href="/privacy-policy" className="hover:text-clay">Privacy</Link></li>
           <li><Link href="/terms-of-service" className="hover:text-clay">Terms</Link></li>
           <li><Link href="/cookie-policy" className="hover:text-clay">Cookies</Link></li>
